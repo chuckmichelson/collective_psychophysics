@@ -26,10 +26,10 @@ console.log("sockets on")
 // const scoreDisplay = document.getElementById('scoreDisplay');
 
 document.body.style.backgroundColor = "white";
-setTimeout(() => { collapseSmoke(); joinGame();}, 5000);
+setTimeout(() => { collapseSplash(); joinGame();}, 5000);
 
 
-function collapseSmoke() {
+function collapseSplash() {
   var x = document.getElementById("myDIV");
   x.style.display = "none";
 }
