@@ -10,7 +10,7 @@ const STIMULI_DISTANCE = 120;
 const CTR_POS_X = 256;
 const CTR_POS_Y = 256;
 
-const CLOCK_POSITIONS = {
+const OUIJA_CODES = {
     1 : {letter : '1', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(60), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(60) },
     2 : {letter : '2', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(30), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(30) },
     3 : {letter : '3', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(0), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(0) },
@@ -34,6 +34,6 @@ module.exports = {
   PLANCHETTE_WIDTH,
   PLANCHETTE_HEIGHT,
   MAX_PLAYERS_PER_ROOM,
-  CLOCK_POSITIONS,
+  OUIJA_CODES,
   AGREE_DURATION,
 }
