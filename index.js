@@ -25,8 +25,8 @@ console.log("sockets on")
 // const smokeBtn = document.getElementById('smokeBtn');
 // const scoreDisplay = document.getElementById('scoreDisplay');
 
-document.body.style.backgroundColor = "black";
-setTimeout(() => { collapseSmoke(); joinGame();}, 2000);
+document.body.style.backgroundColor = "white";
+setTimeout(() => { collapseSmoke(); joinGame();}, 5000);
 
 
 function collapseSmoke() {
