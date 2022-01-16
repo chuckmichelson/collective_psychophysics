@@ -5,46 +5,24 @@ const PLANCHETTE_WIDTH = 120;
 const PLANCHETTE_HEIGHT = 120;
 const MAX_PLAYERS_PER_ROOM = 100;
 const AGREE_DURATION = 3000;
+const STIMULI_DISTANCE = 120;
 
-const OUIJA_CODES = {
-    0 : {letter : '+', x : 204, y : 87 }, // i.e., YES
-    1 : {letter : '-', x : 645, y : 87 }, // i.e., NO
-    2 : {letter : 'A', x : 111, y : 276 },
-    3 : {letter : 'B', x : 162, y : 246 },
-    4 : {letter : 'C', x : 220, y : 226 },
-    5 : {letter : 'D', x : 265, y : 208 },
-    6 : {letter : 'E', x : 316, y : 199 },
-    7 : {letter : 'F', x : 364, y : 193 },
-    8 : {letter : 'G', x : 418, y : 190 },
-    9 : {letter : 'H', x : 472, y : 190 },
-    10 : {letter : 'I', x : 523, y : 199 },
-    11 : {letter : 'J', x : 562, y : 205 },
-    12 : {letter : 'K', x : 613, y : 220 },
-    13 : {letter : 'L', x : 662, y : 238 },
-    14 : {letter : 'M', x : 721, y : 262 },
-    15 : {letter : 'N', x : 115, y : 370 },
-    16 : {letter : 'O', x : 163, y : 343 },
-    17 : {letter : 'P', x : 205, y : 319 },
-    18 : {letter : 'Q', x : 259, y : 298 },
-    19 : {letter : 'R', x : 307, y : 283 },
-    20 : {letter : 'S', x : 361, y : 274 },
-    21 : {letter : 'T', x : 412, y : 268 },
-    22 : {letter : 'U', x : 463, y : 268 },
-    23 : {letter : 'V', x : 517, y : 274 },
-    24 : {letter : 'W', x : 577, y : 289 },
-    25 : {letter : 'X', x : 631, y : 316 },
-    26 : {letter : 'Y', x : 679, y : 340 },
-    27 : {letter : 'Z', x : 724, y : 373 },
-    28 : {letter : '1', x : 199, y : 418 },
-    29 : {letter : '2', x : 238, y : 418 },
-    30 : {letter : '3', x : 283, y : 418 },
-    31 : {letter : '4', x : 337, y : 418 },
-    32 : {letter : '5', x : 388, y : 418 },
-    33 : {letter : '6', x : 439, y : 418 },
-    34 : {letter : '7', x : 487, y : 418 },
-    35 : {letter : '8', x : 535, y : 418 },
-    36 : {letter : '9', x : 583, y : 418 },
-    37 : {letter : '0', x : 635, y : 418 },
+const CTR_POS_X = 256;
+const CTR_POS_Y = 256;
+
+const CLOCK_POSITIONS = {
+    1 : {letter : '1', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(60), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(60) },
+    2 : {letter : '2', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(30), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(30) },
+    3 : {letter : '3', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(0), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(0) },
+    4 : {letter : '', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(-30), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(-30) },
+    5 : {letter : '5', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(-60), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(-60) },
+    6 : {letter : '6', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(-90), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(-90) },
+    7 : {letter : '7', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(-120), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(-120) },
+    8 : {letter : '8', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(-150), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(-150) },
+    9 : {letter : '9', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(-180), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(-180) },
+    10 : {letter : 'A', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(-210), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(-210) },
+    11 : {letter : 'B', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(-240), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(-240) },
+    12 : {letter : 'C', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(-270), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(-270) },
 }
 
 
@@ -56,6 +34,6 @@ module.exports = {
   PLANCHETTE_WIDTH,
   PLANCHETTE_HEIGHT,
   MAX_PLAYERS_PER_ROOM,
-  OUIJA_CODES,
+  CLOCK_POSITIONS,
   AGREE_DURATION,
 }
