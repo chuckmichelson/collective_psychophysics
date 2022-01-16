@@ -23,5 +23,6 @@
   "keywords": [],
   "bugs": {
     "url": "https://github.com/chuckmichelson/collective-psychophysics/issues"
-  }
+  },
+  "devDependencies": {}
 }
