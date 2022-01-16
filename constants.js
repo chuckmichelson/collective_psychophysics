@@ -11,18 +11,18 @@ const CTR_POS_X = CANVAS_WIDTH / 2;
 const CTR_POS_Y = CANVAS_HEIGHT / 2;
 
 const CLOCK_POSITIONS = {
-    1 : {letter : 'clock_pos_1', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(60), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(60) },
-    2 : {letter : 'clock_pos_2', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(30), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(30) },
-    3 : {letter : 'clock_pos_3', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(0), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(0) },
-    4 : {letter : 'clock_pos_4', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(-30), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(-30) },
-    5 : {letter : 'clock_pos_5', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(-60), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(-60) },
-    6 : {letter : 'clock_pos_6', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(-90), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(-90) },
-    7 : {letter : 'clock_pos_7', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(-120), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(-120) },
-    8 : {letter : 'clock_pos_8', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(-150), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(-150) },
-    9 : {letter : 'clock_pos_9', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(-180), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(-180) },
-    10 : {letter : 'clock_pos_10', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(-210), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(-210) },
-    11 : {letter : 'clock_pos_11', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(-240), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(-240) },
-    12 : {letter : 'clock_pos_11', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(-270), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(-270) },
+    1 : {letter : '1', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(60), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(60) },
+    2 : {letter : '2', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(30), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(30) },
+    3 : {letter : '3', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(0), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(0) },
+    4 : {letter : '', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(-30), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(-30) },
+    5 : {letter : '5', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(-60), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(-60) },
+    6 : {letter : '6', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(-90), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(-90) },
+    7 : {letter : '7', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(-120), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(-120) },
+    8 : {letter : '8', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(-150), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(-150) },
+    9 : {letter : '9', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(-180), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(-180) },
+    10 : {letter : 'A', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(-210), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(-210) },
+    11 : {letter : 'B', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(-240), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(-240) },
+    12 : {letter : 'C', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(-270), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(-270) },
 }
 
 
