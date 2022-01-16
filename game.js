@@ -99,6 +99,7 @@ function gameLoop(state) {
   // read letter
   state.previous_letter = state.current_letter;
   state.current_letter = ouijaGetLetter(state);
+  console.log(state.current_letter)
 
   // run timer to determine agreed letter
   if (state.current_letter == '_') {
