@@ -1,5 +1,5 @@
-const CANVAS_WIDTH = 512;
-const CANVAS_HEIGHT = 512;
+const CANVAS_WIDTH = 838;
+const CANVAS_HEIGHT = 554;
 const PLANCHETTE_WIDTH = 120;
 const PLANCHETTE_HEIGHT = 120;
 
@@ -60,13 +60,13 @@ function init() {
 
   const layer1 = document.getElementById('layer1');
   const ctx1 = layer1.getContext('2d');
-  layer1.height = 512;
-  layer1.width = 512;
+  layer1.height = 554;
+  layer1.width = 838;
 
   const layer2 = document.getElementById('layer2');
   const ctx2 = layer2.getContext('2d');
-  layer2.height = 512;
-  layer2.width = 512;
+  layer2.height = 554;
+  layer2.width = 838;
 
   // background image
   var background = new Image();
