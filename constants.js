@@ -7,8 +7,8 @@ const MAX_PLAYERS_PER_ROOM = 100;
 const AGREE_DURATION = 3000;
 const STIMULI_DISTANCE = 120;
 
-const CTR_POS_X = 256;
-const CTR_POS_Y = 256;
+const CTR_POS_X = CANVAS_WIDTH / 2;
+const CTR_POS_Y = CANVAS_HEIGHT / 2;
 
 const CLOCK_POSITIONS = {
     1 : {letter : '1', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(60), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(60) },
