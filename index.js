@@ -1,5 +1,5 @@
-const CANVAS_WIDTH = 838;
-const CANVAS_HEIGHT = 554;
+const CANVAS_WIDTH = 512;
+const CANVAS_HEIGHT = 512;
 const PLANCHETTE_WIDTH = 120;
 const PLANCHETTE_HEIGHT = 120;
 
@@ -25,7 +25,7 @@ console.log("sockets on")
 // const smokeBtn = document.getElementById('smokeBtn');
 // const scoreDisplay = document.getElementById('scoreDisplay');
 
-document.body.style.backgroundColor = "white";
+document.body.style.backgroundColor = "black";
 setTimeout(() => { collapseSplash(); joinGame();}, 5000);
 
 
@@ -68,12 +68,8 @@ function init() {
   layer2.height = 554;
   layer2.width = 838;
 
-  // background image
-  var background = new Image();
-  background.src = "images/ouija_board.png";
-  background.onload = function(){
-      ctx1.drawImage(background,0,0);
-  }
+  // background
+  ctx2.clearRect(255, 255, CANVAS_WIDTH, CANVAS_HEIGHT);
 
   document.addEventListener('keydown', keyDown);
   // console.log("added keydown event listener")
@@ -100,7 +96,7 @@ function paintGame(state) {
   // display score (spirits present)
   const left_layer2 = document.getElementById("left_layer2");
   const left_ctx2 = left_layer2.getContext("2d");
-  left_ctx2.clearRect(0, 0, 100, 554);
+  left_ctx2.clearRect(0, 0, 100, 512);
   left_ctx2.font = "120px Copperplate, Papyrus, fantasy";
   left_ctx2.fillStyle = 'rgba(255, 255, 255, .3)';
   left_ctx2.textAlign = "center";
@@ -121,7 +117,7 @@ function paintGame(state) {
   // display current letter
   const right_layer2 = document.getElementById("right_layer2");
   const right_ctx2 = right_layer2.getContext("2d");
-  right_ctx2.clearRect(0, 0, 100, 554);
+  right_ctx2.clearRect(0, 0, 100, 512);
   right_ctx2.font = "120px Copperplate, Papyrus, fantasy";
   // streak = calculateLetterStreak(state);
   // alpha = streak / state.letter_buffer.length;
@@ -152,7 +148,7 @@ function paintGame(state) {
   const layer_agreed = document.getElementById("layer_agreed");
   const agreed_ctx = layer_agreed.getContext("2d");
   agreed_ctx.fillStyle = 'black';
-  agreed_ctx.clearRect(0, 0, 838, 48);
+  agreed_ctx.clearRect(0, 0, 512, 48);
   agreed_ctx.font = "48px Copperplate, Papyrus, fantasy";
   agreed_ctx.fillStyle = 'rgba(255, 255, 255, .5)';
   agreed_ctx.textAlign = "center";
@@ -185,11 +181,11 @@ function handleGameOver(state) {
   const layer_agreed = document.getElementById("layer_agreed");
   const agreed_ctx = layer_agreed.getContext("2d");
   agreed_ctx.fillStyle = 'black';
-  agreed_ctx.clearRect(0, 0, 838, 48);
+  agreed_ctx.clearRect(0, 0, 512, 48);
 
   const right_layer2 = document.getElementById("right_layer2");
   const right_ctx2 = right_layer2.getContext("2d");
-  right_ctx2.clearRect(0, 0, 100, 554);
+  right_ctx2.clearRect(0, 0, 100, 512);
 
   // remove the planchette
   const layer2 = document.getElementById('layer2');
@@ -201,10 +197,10 @@ function handleGameOver(state) {
   const ctx1 = layer1.getContext('2d');
   ctx1.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
-  // display a dimmed board
-  const dim = new Image();
-  dim.src = "images/ouija_board_dim.png";
-  ctx1.drawImage(dim,0,0);
+  // // display a dimmed board
+  // const dim = new Image();
+  // dim.src = "images/ouija_board_dim.png";
+  // ctx1.drawImage(dim,0,0);
 
   // game over messages
   const layer4 = document.getElementById('layer4');
