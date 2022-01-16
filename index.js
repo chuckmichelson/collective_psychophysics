@@ -26,7 +26,7 @@ console.log("sockets on")
 // const scoreDisplay = document.getElementById('scoreDisplay');
 
 document.body.style.backgroundColor = "black";
-setTimeout(() => { collapseSplash(); joinGame();}, 5000);
+setTimeout(() => { collapseSplash(); joinGame();}, 2000);
 
 
 function collapseSplash() {
@@ -60,13 +60,13 @@ function init() {
 
   const layer1 = document.getElementById('layer1');
   const ctx1 = layer1.getContext('2d');
-  layer1.height = 554;
-  layer1.width = 838;
+  layer1.height = 512;
+  layer1.width = 512;
 
   const layer2 = document.getElementById('layer2');
   const ctx2 = layer2.getContext('2d');
-  layer2.height = 554;
-  layer2.width = 838;
+  layer2.height = 512;
+  layer2.width = 512;
 
   // background
   ctx2.clearRect(255, 255, CANVAS_WIDTH, CANVAS_HEIGHT);
