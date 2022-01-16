@@ -1,5 +1,5 @@
 const { FRAME_RATE } = require('./constants');
-const { CLOCK_POSITIONS } = require('./constants');
+const { OUIJA_CODES } = require('./constants');
 
 
 module.exports = {
@@ -28,7 +28,7 @@ function ouijaGoToLetter(state, letter) {
    // for ( var i = 0; i < 100; i++ ) {
 
    // }
-   ouijaAlphabetLength = Object.keys(CLOCK_POSITIONS).length;
+   ouijaAlphabetLength = Object.keys(OUIJA_CODES).length;
    for ( var i = 0; i < ouijaAlphabetLength - 1; i++ ) {
       if (OUIJA_CODES[i].letter === letter) {
          state.planchette.pos.x = OUIJA_CODES[i].x
@@ -40,20 +40,20 @@ function ouijaGoToLetter(state, letter) {
 
 function ouijaGetLetter(state) {
    letter = '_';
-   clockPositionLength = Object.keys(CLOCK_POSITIONS).length;
+   ouijaAlphabetLength = Object.keys(OUIJA_CODES).length;
    // console.log("ouijaAlphabetLength: " + ouijaAlphabetLength);
    // console.log("state.planchette.pos.x: " + state.planchette.pos.x);
    posx = state.planchette.pos.x;
    posy = state.planchette.pos.y;
 
-   for ( var i = 0; i < clockPositionLength; i++ ) {
+   for ( var i = 0; i < ouijaAlphabetLength; i++ ) {
       // console.log(i)
-      codx = CLOCK_POSITIONS[i].x;
-      cody = CLOCK_POSITIONS[i].y;
+      codx = OUIJA_CODES[i].x;
+      cody = OUIJA_CODES[i].y;
       distance = Math.sqrt(Math.pow(codx - posx, 2) + Math.pow(cody - posy, 2));
       // console.log(distance);
       if (distance <= 15) {
-         letter = CLOCK_POSITIONS[i].letter;
+         letter = OUIJA_CODES[i].letter;
          // console.log('Your letter is: ' + letter);
       }
    }
