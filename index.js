@@ -1,11 +1,11 @@
-const CANVAS_WIDTH = 838;
-const CANVAS_HEIGHT = 554;
+const CANVAS_WIDTH = 512;
+const CANVAS_HEIGHT = 512;
 const PLANCHETTE_WIDTH = 120;
 const PLANCHETTE_HEIGHT = 120;
 
 // ***** CHANGE THIS TO RUN ON HEROKU
-const socket = io('http://localhost:3000');
-// const socket = io('https://collective-psychophysics.herokuapp.com/');
+// const socket = io('http://localhost:3000');
+const socket = io('https://collective-psychophysics.herokuapp.com/');
 
 socket.on('init', handleInit);
 socket.on('gameState', handleGameState);
@@ -60,13 +60,13 @@ function init() {
 
   const layer1 = document.getElementById('layer1');
   const ctx1 = layer1.getContext('2d');
-  layer1.height = 554;
-  layer1.width = 838;
+  layer1.height = 512;
+  layer1.width = 512;
 
   const layer2 = document.getElementById('layer2');
   const ctx2 = layer2.getContext('2d');
-  layer2.height = 554;
-  layer2.width = 838;
+  layer2.height = 512;
+  layer2.width = 512;
 
   // background image
   var background = new Image();
