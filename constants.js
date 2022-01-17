@@ -1,4 +1,4 @@
-const FRAME_RATE = 20;
+const FRAME_RATE = 10;
 const CANVAS_WIDTH = 512;
 const CANVAS_HEIGHT = 512;
 const PLANCHETTE_WIDTH = 120;
