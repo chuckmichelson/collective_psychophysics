@@ -98,7 +98,7 @@ function init() {
   search_image.src = "images/cluttered_desk.jpg";
   ctx1.style.webkitFilter = "blur(3px)";
   ctx1.drawImage(search_image, 0, 0);
-
+  layer1.style.filter = "blur(3Px)";
 
   const layer2 = document.getElementById('layer2');
   const ctx2 = layer2.getContext('2d');
