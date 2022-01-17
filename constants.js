@@ -25,7 +25,7 @@ const CTR_POS_Y = 256;
 //     11 : {letter : '11', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(-240), y : CTR_POS_Y + STIMULI_DISTANCE * Math.sin(-240) },
 // }
 const OUIJA_CODES = {
-    0 : {letter : '0', x : CTR_POS_X + 0, y : CTR_POS_Y + 120 },
+    0 : {letter : '0', x : 256, y : 256 },
 }
 
 
