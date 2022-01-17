@@ -52,12 +52,6 @@ document.body.style.backgroundColor = "black";
 var img = document.getElementById('blurImg');
 img.style.display = "none";
 
-// btn.addEventListener('click', addBlur)
-
-// function addBlur() {
-//   img.style.filter = 'blur(10px)';
-// }
-
 
 
 joinGame();
