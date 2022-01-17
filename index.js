@@ -92,7 +92,21 @@ function init() {
   search_image = new Image();
   search_image.src = "images/cluttered_desk.jpg";
   layer1.style.filter = "blur(10px)";
+  // ctx1.drawImage(search_image, 0, 0);
+
+
+  /// draw the shape we want to use for clipping
+  imgClip = new Image();
+  imgClip.src = "images/planchette.png";
+  ctx1.drawImage(imgClip, 0, 0);
+
+  /// change composite mode to use that shape
+  ctx1.globalCompositeOperation = 'source-in';
+
+  /// draw the image to be clipped
   ctx1.drawImage(search_image, 0, 0);
+
+
 
   const layer2 = document.getElementById('layer2');
   const ctx2 = layer2.getContext('2d');
