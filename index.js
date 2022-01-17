@@ -48,7 +48,7 @@ console.log("sockets on")
 document.body.style.backgroundColor = "black";
 // setTimeout(() => { collapseSplash(); joinGame();}, 2000);
 
-const img = document.querySelector('img');
+const img = document.querySelector('blurry');
 img.addEventListener('click', toggleBlur);
 
 function toggleBlur() {
