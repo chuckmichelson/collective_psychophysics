@@ -54,9 +54,9 @@ img.style.display = "none";
 
 // btn.addEventListener('click', addBlur)
 
-function addBlur() {
-  img.style.filter = 'blur(10px)';
-}
+// function addBlur() {
+//   img.style.filter = 'blur(10px)';
+// }
 
 
 
