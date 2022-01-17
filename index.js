@@ -91,9 +91,9 @@ function init() {
   layer1.width = 512;
 
   search_image = new Image();
-  search_image.src = "images/ouija_board.png";
+  search_image.src = "images/cluttered_desk.jpg";
   imgClip = new Image();
-  imgClip.src = "images/fovea_mask.png";
+  imgClip.src = "images/planchette.png";
   layer1.style.filter = "blur(10px)";
   ctx1.drawImage(search_image, 0, 0);
 
@@ -105,7 +105,7 @@ function init() {
   // ctx1.globalCompositeOperation = 'source-in';
 
   // /// draw the image to be clipped
-  // ctx1.drawImage(search_image, 0, 0);
+  // ctx1.drawImage(img, 0, 0);
 
 
 
