@@ -48,15 +48,12 @@ console.log("sockets on")
 document.body.style.backgroundColor = "black";
 // setTimeout(() => { collapseSplash(); joinGame();}, 2000);
 
-var btn = document.getElementById('blurBtn');
-var img = document.getElementById('blurImg');
+const img = document.querySelector('img');
+img.addEventListener('click', toggleBlur);
 
-btn.addEventListener('click', addBlur)
-
-function addBlur() {
-  img.style.filter = 'blur(10px)';
+function toggleBlur() {
+  this.classList.toggle('blur');
 }
-
 joinGame();
 
 function collapseSplash() {
@@ -98,14 +95,8 @@ function init() {
   layer2.height = 512;
   layer2.width = 512;
 
-  // display search image
-  ctx1.clearRect(255, 255, CANVAS_WIDTH, CANVAS_HEIGHT);
-  const layer1 = document.getElementById('layer2');
-  const ctx1 = layer1.getContext('2d');
-  ctx1.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-  var search_image = new Image();
-  search_image.src = "images/cluttered_desk.jpg";
-  ctx1.drawImage(planchette, state.planchette.pos.x - PLANCHETTE_WIDTH/2, state.planchette.pos.y - PLANCHETTE_HEIGHT/2);
+  // background
+  ctx2.clearRect(255, 255, CANVAS_WIDTH, CANVAS_HEIGHT);
 
   document.addEventListener('keydown', keyDown);
   // console.log("added keydown event listener")
@@ -120,7 +111,6 @@ function keyDown(e) {
 }
 
 function paintGame(state) {
-
 
   // display planchette
   const layer2 = document.getElementById('layer2');
@@ -181,24 +171,20 @@ function paintGame(state) {
   right_ctx2.fillText(display_string, 60, 80);
 
 
-  // // display stimuli around the clock
-  // const layer1 = document.getElementById('layer1');
-  // const ctx1 = layer1.getContext('2d');
-  // ctx1.fillStyle = 'rgba(0, 0, 0, 1)';
-  // ctx1.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-  // ctx1.fillStyle = 'rgba(255, 255, 255, 1)';
-  // ctx1.font = "48px Copperplate, Papyrus, fantasy";
-  // ctx1.textAlign = "left";
-  // var clock_letters = "MWMMMMMMMMMM";
-  // for ( var i = 0; i < 12; i++ ) {
-  //   codx = CLOCK_POSITIONS[i].x;
-  //   cody = CLOCK_POSITIONS[i].y;
-  //   ctx1.fillText(clock_letters[i], codx, cody);
-  // }
-
-cluttered_desk
-
-
+  // display stimuli around the clock
+  const layer1 = document.getElementById('layer1');
+  const ctx1 = layer1.getContext('2d');
+  ctx1.fillStyle = 'rgba(0, 0, 0, 1)';
+  ctx1.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+  ctx1.fillStyle = 'rgba(255, 255, 255, 1)';
+  ctx1.font = "48px Copperplate, Papyrus, fantasy";
+  ctx1.textAlign = "left";
+  var clock_letters = "MWMMMMMMMMMM";
+  for ( var i = 0; i < 12; i++ ) {
+    codx = CLOCK_POSITIONS[i].x;
+    cody = CLOCK_POSITIONS[i].y;
+    ctx1.fillText(clock_letters[i], codx, cody);
+  }
 
   // display agreed letters
   const layer_agreed = document.getElementById("layer_agreed");
