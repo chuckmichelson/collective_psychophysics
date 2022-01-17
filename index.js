@@ -93,7 +93,7 @@ function init() {
   search_image = new Image();
   search_image.src = "images/cluttered_desk.jpg";
   imgClip = new Image();
-  imgClip.src = "images/cluttered_desk.jpg";
+  imgClip.src = "images/planchette.png";
   layer1.style.filter = "blur(10px)";
   ctx1.drawImage(search_image, 0, 0);
 
