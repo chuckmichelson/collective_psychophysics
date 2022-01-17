@@ -91,11 +91,11 @@ function init() {
   layer1.width = 512;
 
   search_image = new Image();
-  search_image.src = "images/cluttered_desk.jpg";
+  search_image.src = "images/ouija_board.png";
   imgClip = new Image();
   imgClip.src = "images/fovea_mask.png";
   // layer1.style.filter = "blur(10px)";
-  ctx1.drawImage(search_image, 0, 0);
+  ctx1.drawImage(imgClip, 0, 0);
 
 
   // /// draw the shape we want to use for clipping
