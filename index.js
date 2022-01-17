@@ -51,9 +51,9 @@ document.body.style.backgroundColor = "black";
 var btn = document.getElementById('blurBtn');
 var img = document.getElementById('blurImg');
 
-btn.addEventListener('click', addBlur)
+btn.addEventListener('click', addBlur(img))
 
-function addBlur() {
+function addBlur(img) {
   img.style.filter = 'blur(3px)';
 }
 
