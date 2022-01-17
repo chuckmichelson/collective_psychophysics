@@ -46,8 +46,9 @@ console.log("sockets on")
 // const scoreDisplay = document.getElementById('scoreDisplay');
 
 document.body.style.backgroundColor = "black";
-setTimeout(() => { collapseSplash(); joinGame();}, 2000);
+// setTimeout(() => { collapseSplash(); joinGame();}, 2000);
 
+joinGame();
 
 function collapseSplash() {
   var x = document.getElementById("myDIV");
