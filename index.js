@@ -52,9 +52,20 @@ document.body.style.backgroundColor = "black";
 var img = document.getElementById('blurImg');
 img.style.display = "none";
 
+const layer1 = document.getElementById('layer1');
+const ctx1 = layer1.getContext('2d');
+layer1.height = 512;
+layer1.width = 512;
+
+search_image = new Image();
+search_image.src = "images/cluttered_desk.jpg";
+imgClip = new Image();
+imgClip.src = "images/fovea_mask.png";
+layer1.style.filter = "blur(10px)";
+ctx1.drawImage(search_image, 0, 0);
 
 
-joinGame();
+// joinGame();
 
 function collapseSplash() {
   var x = document.getElementById("myDIV");
