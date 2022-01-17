@@ -54,7 +54,7 @@ img.style.display = "none";
 
 
 
-joinGame();
+// joinGame();
 
 function collapseSplash() {
   var x = document.getElementById("myDIV");
