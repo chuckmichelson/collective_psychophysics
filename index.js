@@ -60,8 +60,6 @@ const ctx1 = layer1.getContext('2d');
 
 search_image = new Image();
 search_image.src = "images/cluttered_desk.jpg";
-imgClip = new Image();
-imgClip.src = "images/testing.png";
 layer1.style.filter = "blur(10px)";
 ctx1.drawImage(search_image, 0, 0);
 
@@ -186,9 +184,11 @@ function paintGame(state) {
   ctx2.save();
   ctx2.moveTo(state.planchette.pos.x + FOVEA_RADIUS, state.planchette.pos.y + FOVEA_RADIUS);
   ctx2.beginPath();
-  for ( var i = 0; i < 361; i++ ) {
-    codx = state.planchette.pos.x + FOVEA_RADIUS * Math.cos(i  * (Math.PI / 180));
-    cody = state.planchette.pos.y + FOVEA_RADIUS * Math.sin(i  * (Math.PI / 180));
+  dTheta = 10;
+  for ( var i = 0; i < 360 / dTheta + 1; i++ ) {
+    theta = dTheta * i;
+    codx = state.planchette.pos.x + FOVEA_RADIUS * Math.cos(theta  * (Math.PI / 180));
+    cody = state.planchette.pos.y + FOVEA_RADIUS * Math.sin(theta  * (Math.PI / 180));
     ctx2.lineTo(codx, cody);
     ctx2.stroke();
   }
