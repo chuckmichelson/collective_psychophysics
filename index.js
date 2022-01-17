@@ -48,14 +48,14 @@ console.log("sockets on")
 document.body.style.backgroundColor = "black";
 // setTimeout(() => { collapseSplash(); joinGame();}, 2000);
 
-// var btn = document.getElementById('blurBtn');
-// var img = document.getElementById('blurImg');
+var btn = document.getElementById('blurBtn');
+var img = document.getElementById('blurImg');
 
-// btn.addEventListener('click', addBlur)
+btn.addEventListener('click', addBlur)
 
-// function addBlur() {
-//   img.style.filter = 'blur(10px)';
-// }
+function addBlur() {
+  img.style.filter = 'blur(10px)';
+}
 
 
 
@@ -96,7 +96,7 @@ function init() {
   layer1.width = 512;
   search_image = new Image();
   search_image.src = "images/cluttered_desk.jpg";
-  layer1.style.filter = "blur(3px)";
+  layer1.style.filter = "blur(10px)";
   ctx1.drawImage(search_image, 0, 0);
 
   const layer2 = document.getElementById('layer2');
@@ -105,7 +105,7 @@ function init() {
   layer2.width = 512;
 
   // background
-  // ctx2.clearRect(255, 255, CANVAS_WIDTH, CANVAS_HEIGHT);
+  ctx2.clearRect(255, 255, CANVAS_WIDTH, CANVAS_HEIGHT);
 
   document.addEventListener('keydown', keyDown);
   // console.log("added keydown event listener")
