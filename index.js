@@ -180,20 +180,20 @@ function paintGame(state) {
   right_ctx2.fillText(display_string, 60, 80);
 
 
-  // display stimuli around the clock
-  const layer1 = document.getElementById('layer1');
-  const ctx1 = layer1.getContext('2d');
-  ctx1.fillStyle = 'rgba(0, 0, 0, 1)';
-  ctx1.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-  ctx1.fillStyle = 'rgba(255, 255, 255, 1)';
-  ctx1.font = "48px Copperplate, Papyrus, fantasy";
-  ctx1.textAlign = "left";
-  var clock_letters = "MWMMMMMMMMMM";
-  for ( var i = 0; i < 12; i++ ) {
-    codx = CLOCK_POSITIONS[i].x;
-    cody = CLOCK_POSITIONS[i].y;
-    ctx1.fillText(clock_letters[i], codx, cody);
-  }
+  // // display stimuli around the clock
+  // const layer1 = document.getElementById('layer1');
+  // const ctx1 = layer1.getContext('2d');
+  // ctx1.fillStyle = 'rgba(0, 0, 0, 1)';
+  // ctx1.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+  // ctx1.fillStyle = 'rgba(255, 255, 255, 1)';
+  // ctx1.font = "48px Copperplate, Papyrus, fantasy";
+  // ctx1.textAlign = "left";
+  // var clock_letters = "MWMMMMMMMMMM";
+  // for ( var i = 0; i < 12; i++ ) {
+  //   codx = CLOCK_POSITIONS[i].x;
+  //   cody = CLOCK_POSITIONS[i].y;
+  //   ctx1.fillText(clock_letters[i], codx, cody);
+  // }
 
   // display agreed letters
   const layer_agreed = document.getElementById("layer_agreed");
