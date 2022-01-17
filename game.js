@@ -61,19 +61,19 @@ function gameLoop(state) {
     // console.log("index: " + i)
     if (state.x[i] === 1 ) {
       // console.log("RIGHT")
-      state.planchette.pos.x += 3;
+      state.planchette.pos.x += 5;
     }
     if (state.x[i] === -1 ) {
       // console.log("LEFT")
-      state.planchette.pos.x += -3;
+      state.planchette.pos.x += -5;
     }
     if (state.y[i] === 1 ) {
       // console.log("DOWN")
-      state.planchette.pos.y += 3;
+      state.planchette.pos.y += 5;
     }
     if (state.y[i] === -1 ) {
       // console.log("UP")
-      state.planchette.pos.y += -3;
+      state.planchette.pos.y += -5;
     }
 
     // once we read the velocity, zero it out
