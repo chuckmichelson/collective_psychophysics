@@ -177,11 +177,11 @@ function paintGame(state) {
   const ctx2 = layer2.getContext('2d');
   ctx2.clearRect(0, 0, 512, 512);
   if (state.current_letter == '1') {
-    ctx2.lineWidth = 8;
-    ctx2.strokeStyle = 'black';
-  } else {
     ctx2.lineWidth = 12;
     ctx2.strokeStyle = 'green';
+  } else {
+    ctx2.lineWidth = 6;
+    ctx2.strokeStyle = 'black';
   }
   ctx2.save();
   ctx2.moveTo(state.planchette.pos.x + FOVEA_RADIUS, state.planchette.pos.y + FOVEA_RADIUS);
@@ -222,34 +222,34 @@ function paintGame(state) {
   left_ctx2.fillText(display_text, 50, 110);
   left_ctx2.fillText("Present", 50, 135);
 
-  // display current letter
-  const right_layer2 = document.getElementById("right_layer2");
-  const right_ctx2 = right_layer2.getContext("2d");
-  right_ctx2.clearRect(0, 0, 100, 512);
-  right_ctx2.font = "120px Copperplate, Papyrus, fantasy";
-  // streak = calculateLetterStreak(state);
-  // alpha = streak / state.letter_buffer.length;
-  right_ctx2.fillStyle = 'rgba(255, 255, 255, .3)';
-  right_ctx2.textAlign = "center";
+  // // display current letter
+  // const right_layer2 = document.getElementById("right_layer2");
+  // const right_ctx2 = right_layer2.getContext("2d");
+  // right_ctx2.clearRect(0, 0, 100, 512);
+  // right_ctx2.font = "120px Copperplate, Papyrus, fantasy";
+  // // streak = calculateLetterStreak(state);
+  // // alpha = streak / state.letter_buffer.length;
+  // right_ctx2.fillStyle = 'rgba(255, 255, 255, .3)';
+  // right_ctx2.textAlign = "center";
 
-  current_letter = state.current_letter;
-  if (current_letter == '_' || current_letter == undefined) {
-    current_letter = ' ';
-  }
-  display_string = current_letter;
-  if (current_letter == '+') {
-    right_ctx2.font = "48px Copperplate, Papyrus, fantasy";
-    display_string = 'Yes'
-  }
-  if (current_letter == '-') {
-    right_ctx2.font = "48px Copperplate, Papyrus, fantasy";
-    display_string = 'No'
-  }
-  if (current_letter == '.') {
-    right_ctx2.font = "48px Copperplate, Papyrus, fantasy";
-    display_string = 'Bye'
-  }
-  right_ctx2.fillText(display_string, 60, 80);
+  // current_letter = state.current_letter;
+  // if (current_letter == '_' || current_letter == undefined) {
+  //   current_letter = ' ';
+  // }
+  // display_string = current_letter;
+  // if (current_letter == '+') {
+  //   right_ctx2.font = "48px Copperplate, Papyrus, fantasy";
+  //   display_string = 'Yes'
+  // }
+  // if (current_letter == '-') {
+  //   right_ctx2.font = "48px Copperplate, Papyrus, fantasy";
+  //   display_string = 'No'
+  // }
+  // if (current_letter == '.') {
+  //   right_ctx2.font = "48px Copperplate, Papyrus, fantasy";
+  //   display_string = 'Bye'
+  // }
+  // right_ctx2.fillText(display_string, 60, 80);
 
 
   // // display stimuli around the clock
@@ -272,10 +272,11 @@ function paintGame(state) {
   const agreed_ctx = layer_agreed.getContext("2d");
   agreed_ctx.fillStyle = 'black';
   agreed_ctx.clearRect(0, 0, 512, 48);
-  agreed_ctx.font = "48px Copperplate, Papyrus, fantasy";
+  agreed_ctx.font = "18px Copperplate, Papyrus, fantasy";
   agreed_ctx.fillStyle = 'rgba(255, 255, 255, .5)';
   agreed_ctx.textAlign = "center";
-  agreed_ctx.fillText("x: " + state.planchette.pos.x + "y: " + state.planchette.pos.y, 256, 40);
+  agreed_ctx.fillText("Use the arrow keys to find the calculator.", 256, 20);
+  // agreed_ctx.fillText("x: " + state.planchette.pos.x + " y: " + state.planchette.pos.y, 256, 40);
 }
 
 function handleInit(number) {
