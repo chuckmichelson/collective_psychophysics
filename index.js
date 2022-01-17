@@ -176,8 +176,13 @@ function paintGame(state) {
   const layer2 = document.getElementById('layer2');
   const ctx2 = layer2.getContext('2d');
   ctx2.clearRect(0, 0, 512, 512);
-  ctx2.lineWidth = 12;
-  ctx2.strokeStyle = 'black';
+  if (state.current_letter == '1') {
+    ctx2.lineWidth = 8;
+    ctx2.strokeStyle = 'black';
+  } else {
+    ctx2.lineWidth = 12;
+    ctx2.strokeStyle = 'green';
+  }
   ctx2.save();
   ctx2.moveTo(state.planchette.pos.x + FOVEA_RADIUS, state.planchette.pos.y + FOVEA_RADIUS);
   ctx2.beginPath();
