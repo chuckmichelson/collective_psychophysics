@@ -1,5 +1,5 @@
 const { FRAME_RATE } = require('./constants');
-const { OUIJA_CODES } = require('./constants');
+const { CLOCK_POSITIONS } = require('./constants');
 
 
 module.exports = {
@@ -22,17 +22,17 @@ function makeid(length) {
 function ouijaGoToLetter(state, letter) {
    // console.log("made it to ouijaGoToLetter")
    // xstart = state.planchette.pos.x;
-   // xend = OUIJA_CODES[letter].x;
+   // xend = CLOCK_POSITIONS[letter].x;
    // ystart = state.planchette.pos.y;
-   // yend = OUIJA_CODES[letter].y;
+   // yend = CLOCK_POSITIONS[letter].y;
    // for ( var i = 0; i < 100; i++ ) {
 
    // }
-   ouijaAlphabetLength = Object.keys(OUIJA_CODES).length;
+   ouijaAlphabetLength = Object.keys(CLOCK_POSITIONS).length;
    for ( var i = 0; i < ouijaAlphabetLength - 1; i++ ) {
-      if (OUIJA_CODES[i].letter === letter) {
-         state.planchette.pos.x = OUIJA_CODES[i].x
-         state.planchette.pos.y = OUIJA_CODES[i].y
+      if (CLOCK_POSITIONS[i].letter === letter) {
+         state.planchette.pos.x = CLOCK_POSITIONS[i].x
+         state.planchette.pos.y = CLOCK_POSITIONS[i].y
       }
    }
   return state;
@@ -40,7 +40,7 @@ function ouijaGoToLetter(state, letter) {
 
 function ouijaGetLetter(state) {
    letter = '_';
-   ouijaAlphabetLength = Object.keys(OUIJA_CODES).length;
+   ouijaAlphabetLength = Object.keys(CLOCK_POSITIONS).length;
    // console.log("ouijaAlphabetLength: " + ouijaAlphabetLength);
    // console.log("state.planchette.pos.x: " + state.planchette.pos.x);
    posx = state.planchette.pos.x;
@@ -48,12 +48,12 @@ function ouijaGetLetter(state) {
 
    for ( var i = 0; i < ouijaAlphabetLength; i++ ) {
       // console.log(i)
-      codx = OUIJA_CODES[i].x;
-      cody = OUIJA_CODES[i].y;
+      codx = CLOCK_POSITIONS[i].x;
+      cody = CLOCK_POSITIONS[i].y;
       distance = Math.sqrt(Math.pow(codx - posx, 2) + Math.pow(cody - posy, 2));
       // console.log(distance);
       if (distance <= 15) {
-         letter = OUIJA_CODES[i].letter;
+         letter = CLOCK_POSITIONS[i].letter;
          // console.log('Your letter is: ' + letter);
       }
    }

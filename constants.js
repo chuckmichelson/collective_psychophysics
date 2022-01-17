@@ -10,7 +10,7 @@ const STIMULI_DISTANCE = 120;
 const CTR_POS_X = 256;
 const CTR_POS_Y = 256;
 
-const OUIJA_CODES = {
+const CLOCK_POSITIONS = {
     0 : {letter : '0', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(90  * (Math.PI / 180)), y : CTR_POS_Y - STIMULI_DISTANCE * Math.sin(90  * (Math.PI / 180)) },
     1 : {letter : '1', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(60  * (Math.PI / 180)), y : CTR_POS_Y - STIMULI_DISTANCE * Math.sin(60  * (Math.PI / 180)) },
     2 : {letter : '2', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(30  * (Math.PI / 180)), y : CTR_POS_Y - STIMULI_DISTANCE * Math.sin(30  * (Math.PI / 180)) },
@@ -24,7 +24,7 @@ const OUIJA_CODES = {
     10 : {letter : '10', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(-210  * (Math.PI / 180)), y : CTR_POS_Y - STIMULI_DISTANCE * Math.sin(-210  * (Math.PI / 180)) },
     11 : {letter : '11', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(-240  * (Math.PI / 180)), y : CTR_POS_Y - STIMULI_DISTANCE * Math.sin(-240  * (Math.PI / 180)) },
 }
-// const OUIJA_CODES = {
+// const CLOCK_POSITIONS = {
 //     0 : {letter : '0', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(0 * (Math.PI / 180)), y : CTR_POS_Y - 0 },
 // }
 
@@ -36,6 +36,6 @@ module.exports = {
   PLANCHETTE_WIDTH,
   PLANCHETTE_HEIGHT,
   MAX_PLAYERS_PER_ROOM,
-  OUIJA_CODES,
+  CLOCK_POSITIONS,
   AGREE_DURATION,
 }
