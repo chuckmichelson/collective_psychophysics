@@ -172,10 +172,11 @@ function paintGame(state) {
   ctx1.fillStyle = 'rgba(255, 255, 255, 1)';
   ctx1.font = "48px Copperplate, Papyrus, fantasy";
   ctx1.textAlign = "left";
+  var clock_letters = "MWMMMMMMMMMM";
   for ( var i = 0; i < 12; i++ ) {
     codx = CLOCK_POSITIONS[i].x;
     cody = CLOCK_POSITIONS[i].y;
-    ctx1.fillText("x", codx, cody);
+    ctx1.fillText(clock_letters[i], codx, cody);
   }
 
   // display agreed letters
