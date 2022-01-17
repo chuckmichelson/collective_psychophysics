@@ -54,7 +54,7 @@ var img = document.getElementById('blurImg');
 btn.addEventListener('click', addBlur)
 
 function addBlur() {
-  img.style.filter = 'blur(10px)';
+  self.style.filter = 'blur(10px)';
 }
 
 
