@@ -5,6 +5,8 @@ body {
     overflow: hidden;
     background-color: 'black';
     font-family: Copperplate, Papyrus, fantasy;
+    img { transition: filter 1s linear; }
+        .blur { filter: blur(30px); }
 }
 
 canvas {
@@ -15,3 +17,4 @@ canvas {
     display: block;
     /*border: 5px solid blue;*/
 }
+
