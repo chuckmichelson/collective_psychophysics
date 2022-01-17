@@ -94,7 +94,7 @@ function init() {
   search_image.src = "images/cluttered_desk.jpg";
   imgClip = new Image();
   imgClip.src = "images/fovea_mask.png";
-  layer1.style.filter = "blur(10px)";
+  // layer1.style.filter = "blur(10px)";
   ctx1.drawImage(search_image, 0, 0);
 
 
