@@ -146,7 +146,7 @@ function paintGame(state) {
 
   current_letter = state.current_letter;
   if (current_letter == '_' || current_letter == undefined) {
-    current_letter = '_';
+    current_letter = ' ';
   }
   display_string = current_letter;
   if (current_letter == '+') {
