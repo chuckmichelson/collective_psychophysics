@@ -94,6 +94,10 @@ function init() {
   const ctx1 = layer1.getContext('2d');
   layer1.height = 512;
   layer1.width = 512;
+  search_image = new Image();
+  search_image.src = "images/cluttered_desk.jpg";
+  ctx1.drawImage(search_image, 0, 0);
+
 
   const layer2 = document.getElementById('layer2');
   const ctx2 = layer2.getContext('2d');
