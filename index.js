@@ -54,7 +54,7 @@ var img = document.getElementById('blurImg');
 btn.addEventListener('click', addBlur)
 
 function addBlur() {
-  self.style.filter = 'blur(10px)';
+  img.style.filter = 'blur(10px)';
 }
 
 
@@ -96,6 +96,7 @@ function init() {
   layer1.width = 512;
   search_image = new Image();
   search_image.src = "images/cluttered_desk.jpg";
+  search_image.style.filter = 'blur(10px)';
   ctx1.drawImage(search_image, 0, 0);
 
 
