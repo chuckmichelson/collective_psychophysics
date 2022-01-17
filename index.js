@@ -50,7 +50,7 @@ document.body.style.backgroundColor = "black";
 
 // var btn = document.getElementById('blurBtn');
 var img = document.getElementById('blurImg');
-img.style.display = "none";
+// img.style.display = "none";
 
 
 
