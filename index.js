@@ -55,9 +55,9 @@ img.style.display = "none";
 const layer1 = document.getElementById('layer1');
 const ctx1 = layer2.getContext('2d');
 search_image = new Image();
-search_image.src = "images/cluttered_desk.jpg";
+search_image.src = "images/fovea_mask.png";
 imgClip = new Image();
-imgClip.src = "images/planchette.png";
+imgClip.src = "images/fovea_mask.png";
 // layer1.style.filter = "blur(10px)";
 ctx1.drawImage(imgClip, 0, 0);
 
