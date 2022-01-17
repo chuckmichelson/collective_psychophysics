@@ -170,7 +170,11 @@ function paintGame(state) {
   ctx1.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
   ctx1.fillStyle = 'rgba(255, 255, 255, 1)';
   ctx1.font = "48px Copperplate, Papyrus, fantasy";
-
+  for ( var i = 0; i < 12; i++ ) {
+    codx = CLOCK_POSITIONS[i].x;
+    cody = CLOCK_POSITIONS[i].y;
+    ctx1.fillText("x", codx, cody);
+  }
 
   // display agreed letters
   const layer_agreed = document.getElementById("layer_agreed");
