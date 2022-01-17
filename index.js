@@ -57,7 +57,7 @@ const ctx1 = layer2.getContext('2d');
 search_image = new Image();
 search_image.src = "images/cluttered_desk.jpg";
 imgClip = new Image();
-imgClip.src = "images/fovea_mask.png";
+imgClip.src = "images/planchette.png";
 // layer1.style.filter = "blur(10px)";
 ctx1.drawImage(imgClip, 0, 0);
 
