@@ -49,14 +49,14 @@ document.body.style.backgroundColor = "black";
 // setTimeout(() => { collapseSplash(); joinGame();}, 2000);
 
 // var btn = document.getElementById('blurBtn');
-// var img = document.getElementById('blurImg');
-// img.style.display = "none";
+var img = document.getElementById('blurImg');
+img.style.display = "none";
 
 // btn.addEventListener('click', addBlur)
 
-// function addBlur() {
-//   img.style.filter = 'blur(10px)';
-// }
+function addBlur() {
+  img.style.filter = 'blur(10px)';
+}
 
 
 
