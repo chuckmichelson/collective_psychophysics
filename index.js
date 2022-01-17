@@ -25,8 +25,8 @@ const CLOCK_POSITIONS = {
 }
 
 // ***** CHANGE THIS TO RUN ON HEROKU
-// const socket = io('http://localhost:3000');
-const socket = io('https://collective-psychophysics.herokuapp.com/');
+const socket = io('http://localhost:3000');
+// const socket = io('https://collective-psychophysics.herokuapp.com/');
 
 socket.on('init', handleInit);
 socket.on('gameState', handleGameState);
@@ -313,10 +313,10 @@ function handleGameOver(state) {
   const ctx2 = layer2.getContext('2d');
   ctx2.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
-  // remove the ouija board
-  const layer1 = document.getElementById('layer1');
-  const ctx1 = layer1.getContext('2d');
-  ctx1.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+  // // remove the ouija board
+  // const layer1 = document.getElementById('layer1');
+  // const ctx1 = layer1.getContext('2d');
+  // ctx1.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
   // // display a dimmed board
   // const dim = new Image();
