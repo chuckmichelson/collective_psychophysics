@@ -50,6 +50,7 @@ document.body.style.backgroundColor = "black";
 
 var btn = document.getElementById('blurBtn');
 var img = document.getElementById('blurImg');
+img.display = "none";
 
 btn.addEventListener('click', addBlur)
 
