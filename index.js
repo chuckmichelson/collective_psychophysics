@@ -48,6 +48,14 @@ console.log("sockets on")
 document.body.style.backgroundColor = "black";
 // setTimeout(() => { collapseSplash(); joinGame();}, 2000);
 
+const img = document.querySelector('img');
+img.addEventListener('click', toggleBlur);
+
+function toggleBlur() {
+  this.classList.toggle('blur');
+}
+
+
 joinGame();
 
 function collapseSplash() {
