@@ -25,8 +25,8 @@ const CTR_POS_Y = 256;
 // }
 
 // ***** CHANGE THIS TO RUN ON HEROKU
-// const socket = io('http://localhost:3000');
-const socket = io('https://collective-psychophysics.herokuapp.com/');
+const socket = io('http://localhost:3000');
+// const socket = io('https://collective-psychophysics.herokuapp.com/');
 
 socket.on('init', handleInit);
 socket.on('gameState', handleGameState);
