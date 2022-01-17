@@ -105,7 +105,7 @@ function init() {
   layer2.width = 512;
 
   // background
-  ctx2.clearRect(255, 255, CANVAS_WIDTH, CANVAS_HEIGHT);
+  // ctx2.clearRect(255, 255, CANVAS_WIDTH, CANVAS_HEIGHT);
 
   document.addEventListener('keydown', keyDown);
   // console.log("added keydown event listener")
