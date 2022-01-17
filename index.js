@@ -166,7 +166,8 @@ function paintGame(state) {
   // display stimuli around the clock
   const layer1 = document.getElementById('layer1');
   const ctx1 = layer1.getContext('2d');
-  ctx2.clearRect(255, 255, CANVAS_WIDTH, CANVAS_HEIGHT);
+  ctx1.fillStyle = 'rgba(255, 255, 255, .3)';
+  ctx1.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
 
   // display agreed letters
