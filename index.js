@@ -270,7 +270,7 @@ function paintGame(state) {
   agreed_ctx.font = "48px Copperplate, Papyrus, fantasy";
   agreed_ctx.fillStyle = 'rgba(255, 255, 255, .5)';
   agreed_ctx.textAlign = "center";
-  agreed_ctx.fillText(state.agreed_letters, 419, 40);
+  agreed_ctx.fillText("x: " + state.planchette.pos.x + "y: " + state.planchette.pos.y, 256, 40);
 }
 
 function handleInit(number) {
