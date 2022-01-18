@@ -137,6 +137,11 @@ function keyDown(e) {
 
 function paintGame(state) {
 
+  // update the background if it's a new trial
+  if (state.triggerNewTrial == true) {
+
+  }
+
   // display fovea
   const layer2 = document.getElementById('layer2');
   const ctx2 = layer2.getContext('2d');
