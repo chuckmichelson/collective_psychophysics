@@ -48,8 +48,8 @@ function ouijaGetLetter(state) {
 
    for ( var i = 0; i < 1; i++ ) {
       // console.log(i)
-      codx = 196;
-      cody = 71;
+      codx = state.current_trial.x;
+      cody = state.current_trial.x;
       distance = Math.sqrt(Math.pow(codx - posx, 2) + Math.pow(cody - posy, 2));
       // console.log(distance);
       if (distance <= 15) {
