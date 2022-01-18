@@ -6,6 +6,7 @@ const PLANCHETTE_HEIGHT = 120;
 const MAX_PLAYERS_PER_ROOM = 100;
 const AGREE_DURATION = 3000;
 const STIMULI_DISTANCE = 180;
+const BLUR = [0, 1, 2, 4, 8, 16];
 
 const CTR_POS_X = 256;
 const CTR_POS_Y = 256;
@@ -91,4 +92,5 @@ module.exports = {
   // CLOCK_POSITIONS,
   AGREE_DURATION,
   STIMULI,
+  BLUR,
 }
