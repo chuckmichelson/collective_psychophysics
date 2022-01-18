@@ -125,7 +125,8 @@ function startGameInterval(roomName) {
     const winner = gameLoop(state[roomName]);
 
     if (!winner) {
-      emitGameState(roomName, state[roomName])
+      emitGameState(roomName, state[roomName]);
+      state[roomName].triggerNewTrial = false;
     } else {
       emitGameOver(roomName, state[roomName]);
       // state[roomName] = null;

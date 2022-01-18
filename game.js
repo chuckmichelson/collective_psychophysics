@@ -66,7 +66,7 @@ function gameLoop(state) {
     return;
   }
 
-  if (state.isNewTrial) {
+  if (state.current_letter == '1') {
     state = makeTrial(state);
   }
 
