@@ -38,6 +38,12 @@ function createGameState() {
         y: 256,
       }
     },
+    target: {
+      pos: {
+        x: 0,
+        y: 0,
+      }
+    },
     previous_letter: '_',
     current_letter: '_',
     agreed_letters: '',
