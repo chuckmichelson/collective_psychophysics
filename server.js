@@ -78,7 +78,7 @@ io.on('connection', client => {
     state[roomName].numSpirits = numClients + 1;
     // console.log("numClients: " + numClients)
     client.number = numClients + 1;
-    client.emit('init', numClients + 1);
+    client.emit('init', state[roomName]);
 
     startGameInterval(roomName);
   }

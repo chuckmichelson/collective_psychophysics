@@ -91,14 +91,13 @@ let playerNumber = 1;
 let gameActive = false;
 
 
-function init() {
+function init(state) {
 
   const layer1 = document.getElementById('layer1');
   const ctx1 = layer1.getContext('2d');
-
   search_image = new Image();
   search_image.src = "images/animal_000.jpg";
-  // search_image.src = state.current_trial.stimulus.image_path;
+  console.log(state.current_trial.stimulus.image_path);
   layer1.style.filter = "blur(10px)";
   ctx1.drawImage(search_image, 0, 0);
 
@@ -134,6 +133,15 @@ function keyDown(e) {
 
 function paintGame(state) {
 
+  const layer1 = document.getElementById('layer1');
+  const ctx1 = layer1.getContext('2d');
+  search_image = new Image();
+  search_image.src = "images/animal_000.jpg";
+  // search_image.src = state.current_trial.stimulus.image_path;
+  layer1.style.filter = "blur(10px)";
+  ctx1.drawImage(search_image, 0, 0);
+
+  // display fovea
   const layer2 = document.getElementById('layer2');
   const ctx2 = layer2.getContext('2d');
   ctx2.clearRect(0, 0, 612, 512);
