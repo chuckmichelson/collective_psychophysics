@@ -138,8 +138,8 @@ function keyDown(e) {
 function paintGame(state) {
 
   // update the background if it's a new trial
-  if (state.triggerNewTrial == true) {
-
+  if (state.current_letter == '1') {
+    loadSearchImage(state);
   }
 
   // display fovea
