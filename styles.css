@@ -3,7 +3,8 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: 'black';
+    background-color: 'grey';
+    color: white;
     font-family: Copperplate, Papyrus, fantasy;
 }
 
