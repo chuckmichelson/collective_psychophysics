@@ -50,7 +50,7 @@ function createGameState() {
     current_letter: '_',
     agreed_letters: '',
     current_trial: {},
-    triggerNewTrial: false;
+    triggerNewTrial: false,
   };
 }
 
