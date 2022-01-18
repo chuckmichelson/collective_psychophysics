@@ -172,7 +172,7 @@ function getUpdatedVelocity(keyCode) {
 
 function makeTrial(state) {
   state.current_trial.stimulus = STIMULI[0];
-  state.current_trial.blur = 16;
+  state.current_trial.blur = BLUR[1];
   state.triggerNewTrial = true;
   return state;
 }
