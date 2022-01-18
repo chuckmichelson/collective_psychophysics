@@ -153,4 +153,8 @@ function emitScore(room, score) {
     .emit('gameScore', JSON.stringify(score));
 }
 
-
+function emitNewTrial(room, gameState) {
+  // Send this event to everyone in the room.
+  io.sockets.in(room)
+    .emit('newTrial', JSON.stringify(gameState));
+}
