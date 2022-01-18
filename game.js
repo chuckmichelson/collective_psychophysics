@@ -50,6 +50,7 @@ function createGameState() {
     current_letter: '_',
     agreed_letters: '',
     current_trial: {},
+    triggerNewTrial: false;
   };
 }
 
@@ -65,7 +66,7 @@ function gameLoop(state) {
     return;
   }
 
-  if (state.agreed_letters != '') {
+  if (state.isNewTrial) {
     state = makeTrial(state);
   }
 
@@ -170,5 +171,6 @@ function getUpdatedVelocity(keyCode) {
 
 function makeTrial(state) {
   state.current_trial.stimulus = STIMULI[1];
+  state.triggerNewTrial = true;
   return state;
 }
