@@ -63,6 +63,10 @@ function gameLoop(state) {
     return;
   }
 
+  if (state.agreed_letters != '') {
+    state = makeTrial(state);
+  }
+
   // decision rule
   for (let i = 0; i < MAX_PLAYERS_PER_ROOM; i++) {
     // console.log("index: " + i)
@@ -162,6 +166,7 @@ function getUpdatedVelocity(keyCode) {
 }
 
 
-function makeTrial() {
+function makeTrial(state) {
   state.current_trial.stimulus = STIMULI[0];
+  return state;
 }
