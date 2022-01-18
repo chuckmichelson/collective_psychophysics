@@ -21,6 +21,7 @@ function initGame() {
   console.log("made it to initGame()")
   state = createGameState();
   state.current_game_active = true;
+  state = makeTrial(state);
   // state = ouijaGoToLetter(state, '5');
   start = 0;
   return state;
