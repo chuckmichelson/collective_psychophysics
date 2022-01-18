@@ -60,8 +60,8 @@ function ouijaGetLetter(state) {
          // console.log('Your letter is: ' + letter);
       }
    }
-   if (posy >= 494 && posx >= 280 && posx <= 562) {
-      letter = '.'; // i.e., GOODBYE
-   }
+   // if (posy >= 494 && posx >= 280 && posx <= 562) {
+   //    letter = '.'; // i.e., GOODBYE
+   // }
    return letter;
 }
