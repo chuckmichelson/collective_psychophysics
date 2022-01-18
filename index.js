@@ -1,4 +1,4 @@
-const CANVAS_WIDTH = 512;
+const CANVAS_WIDTH = 612;
 const CANVAS_HEIGHT = 512;
 const PLANCHETTE_WIDTH = 120;
 const PLANCHETTE_HEIGHT = 120;
@@ -55,42 +55,10 @@ img.style.display = "none";
 
 const layer1 = document.getElementById('layer1');
 const ctx1 = layer1.getContext('2d');
-// layer1.height = 512;
-// layer1.width = 512;
-
 search_image = new Image();
-search_image.src = "images/cluttered_desk.jpg";
+search_image.src = "images/animal_004.jpg";
 layer1.style.filter = "blur(10px)";
 ctx1.drawImage(search_image, 0, 0);
-
-
-// const layer2 = document.getElementById('layer2');
-// const ctx2 = layer2.getContext('2d');
-// /// use save when using clip Path
-// ctx2.save();
-// ctx2.beginPath();
-// ctx2.moveTo(0, 0);
-// ctx2.lineTo(0,50);
-// ctx2.lineTo(50,50);
-// ctx2.lineTo(50,0);
-// ctx2.lineTo(0,0);
-// ctx2.closePath();
-// ctx2.clip();
-// ctx2.drawImage(search_image, 0, 0);
-// ctx2.restore();
-
-
-
-
-// /// draw the shape we want to use for clipping
-// ctx1.drawImage(imgClip, 0, 0);
-
-// /// change composite mode to use that shape
-// ctx1.globalCompositeOperation = 'source-in';
-
-// /// draw the image to be clipped
-// ctx1.drawImage(search_image, 0, 0);
-
 
 
 
@@ -127,13 +95,9 @@ function init() {
 
   const layer1 = document.getElementById('layer1');
   const ctx1 = layer1.getContext('2d');
-  layer1.height = 512;
-  layer1.width = 512;
 
   search_image = new Image();
-  search_image.src = "images/cluttered_desk.jpg";
-  imgClip = new Image();
-  imgClip.src = "images/fovea_mask.png";
+  search_image.src = "images/animal_004.jpg";
   layer1.style.filter = "blur(10px)";
   ctx1.drawImage(search_image, 0, 0);
 
@@ -151,8 +115,6 @@ function init() {
 
   const layer2 = document.getElementById('layer2');
   const ctx2 = layer2.getContext('2d');
-  layer2.height = 512;
-  layer2.width = 512;
 
   // background
   ctx2.clearRect(255, 255, CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -173,7 +135,7 @@ function paintGame(state) {
 
   const layer2 = document.getElementById('layer2');
   const ctx2 = layer2.getContext('2d');
-  ctx2.clearRect(0, 0, 512, 512);
+  ctx2.clearRect(0, 0, 612, 512);
   if (state.current_letter == '1') {
     ctx2.lineWidth = 12;
     ctx2.strokeStyle = 'green';
@@ -271,7 +233,7 @@ function paintGame(state) {
   const layer_agreed = document.getElementById("layer_agreed");
   const agreed_ctx = layer_agreed.getContext("2d");
   agreed_ctx.fillStyle = 'black';
-  agreed_ctx.clearRect(0, 0, 512, 48);
+  agreed_ctx.clearRect(0, 0, 612, 48);
   agreed_ctx.font = "18px Copperplate, Papyrus, fantasy";
   agreed_ctx.fillStyle = 'rgba(255, 255, 255, .5)';
   agreed_ctx.textAlign = "center";
@@ -305,7 +267,7 @@ function handleGameOver(state) {
   const layer_agreed = document.getElementById("layer_agreed");
   const agreed_ctx = layer_agreed.getContext("2d");
   agreed_ctx.fillStyle = 'black';
-  agreed_ctx.clearRect(0, 0, 512, 48);
+  agreed_ctx.clearRect(0, 0, 612, 48);
 
   const right_layer2 = document.getElementById("right_layer2");
   const right_ctx2 = right_layer2.getContext("2d");
