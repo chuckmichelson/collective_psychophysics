@@ -12,18 +12,19 @@ const CTR_POS_Y = 256;
 
 const STIMULI = {
   0 : {
-    category : 'animals',
-    target_name : 'elephant',
+    category : 'animals', target_name : 'elephant',
     image_path: 'images/animal_000.jpg',
-    x : 296,
-    y : 236,
+    x : 296, y : 236,
     },
   1 : {
-    category : 'animals',
-    target_name : 'squirrel',
+    category : 'animals', target_name : 'squirrel',
     image_path: 'images/animal_001.jpg',
-    x : 196,
-    y : 126,
+    x : 196, y : 126,
+    },
+  2 : {
+    category : 'animals', target_name : 'bird',
+    image_path: 'images/animal_002.jpg',
+    x : 366, y : 176,
     },
 }
 // const CLOCK_POSITIONS = {
