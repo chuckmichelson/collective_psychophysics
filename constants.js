@@ -56,6 +56,11 @@ const STIMULI = {
     image_path: 'images/animal_006.jpg',
     x : 211, y : 156,
     },
+  9 : {
+    category : 'desks', target_name : 'calculator',
+    image_path: 'images/desk_000.jpg',
+    x : 211, y : 156,
+    },
 }
 // const CLOCK_POSITIONS = {
 //     0 : {letter : '0', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(90  * (Math.PI / 180)), y : CTR_POS_Y - STIMULI_DISTANCE * Math.sin(90  * (Math.PI / 180)) },
