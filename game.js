@@ -47,6 +47,7 @@ function createGameState() {
     previous_letter: '_',
     current_letter: '_',
     agreed_letters: '',
+    current_trial: '',
   };
 }
 
@@ -161,4 +162,6 @@ function getUpdatedVelocity(keyCode) {
 }
 
 
-
+function makeTrial() {
+  state.current_trial.stimulus = STIMULI[0];
+}

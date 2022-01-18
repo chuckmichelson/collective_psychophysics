@@ -22,8 +22,8 @@ const STIMULI = {
     category : 'animals',
     target_name : 'squirrel',
     image_path: 'images/animal_001.jpg',
-    x : 296,
-    y : 236,
+    x : 196,
+    y : 126,
     },
 }
 // const CLOCK_POSITIONS = {
