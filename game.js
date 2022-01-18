@@ -174,6 +174,7 @@ function makeTrial(state) {
   state.current_trial.stimulus = STIMULI[0];
   console.log(BLUR.length)
   state.current_trial.blur = BLUR[Math.floor(Math.random() * BLUR.length)];
+  console.log(state.current_trial.blur)
   state.triggerNewTrial = true;
   return state;
 }
