@@ -351,5 +351,6 @@ function loadSearchImage(state) {
 }
 
 function handleNewTrial(state) {
+  console.log("made it to handleNewTrial")
   loadSearchImage(state);
 }
