@@ -346,7 +346,7 @@ function loadSearchImage(state) {
   const ctx1 = layer1.getContext('2d');
   search_image = new Image();
   search_image.src = "images/animal_000.jpg";
-  layer1.style.filter = "blur(10px)";
+  layer1.style.filter = "blur(" + state.current_trial.blur + "px)";
   ctx1.drawImage(search_image, 0, 0);
 }
 
