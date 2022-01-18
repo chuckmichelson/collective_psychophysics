@@ -169,6 +169,6 @@ function getUpdatedVelocity(keyCode) {
 
 
 function makeTrial(state) {
-  state.current_trial.stimulus = STIMULI[0];
+  state.current_trial.stimulus = STIMULI[1];
   return state;
 }
