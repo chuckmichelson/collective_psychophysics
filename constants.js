@@ -59,7 +59,7 @@ const STIMULI = {
   9 : {
     category : 'desks', target_name : 'calculator',
     image_path: 'images/desk_000.jpg',
-    x : 211, y : 156,
+    x : 60, y : 140,
     },
 }
 // const CLOCK_POSITIONS = {
