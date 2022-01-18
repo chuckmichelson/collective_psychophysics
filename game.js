@@ -6,6 +6,7 @@ const { PLANCHETTE_HEIGHT } = require('./constants');
 const { MAX_PLAYERS_PER_ROOM } = require('./constants');
 const { AGREE_DURATION } = require('./constants');
 const { STIMULI } = require('./constants');
+const { NUM_STIMULI } = require('./constants');
 const { BLUR } = require('./constants');
 
 const { makeid } = require('./utils');
