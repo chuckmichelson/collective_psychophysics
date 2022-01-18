@@ -11,7 +11,12 @@ const CTR_POS_X = 256;
 const CTR_POS_Y = 256;
 
 const ANIMALS = {
-  0 : {target_name : 'elephant face', x : 256, y : 256 },
+  0 : {
+    target_name : 'elephant face',
+    image_path: 'images/animal_000.jpg',
+    x : 296,
+    y : 236,
+    },
 }
 // const CLOCK_POSITIONS = {
 //     0 : {letter : '0', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(90  * (Math.PI / 180)), y : CTR_POS_Y - STIMULI_DISTANCE * Math.sin(90  * (Math.PI / 180)) },
