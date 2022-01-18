@@ -336,3 +336,12 @@ function reset() {
   initialScreen.style.display = "block";
   gameScreen.style.display = "none";
 }
+
+function loadSearchImage(state) {
+  const layer1 = document.getElementById('layer1');
+  const ctx1 = layer1.getContext('2d');
+  search_image = new Image();
+  search_image.src = "images/animal_000.jpg";
+  layer1.style.filter = "blur(10px)";
+  ctx1.drawImage(search_image, 0, 0);
+}
