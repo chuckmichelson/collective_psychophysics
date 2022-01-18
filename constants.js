@@ -31,6 +31,11 @@ const STIMULI = {
     image_path: 'images/animal_003.jpg',
     x : 351, y : 201,
     },
+  4 : {
+    category : 'animals', target_name : 'deer',
+    image_path: 'images/animal_004.jpg',
+    x : 206, y : 241,
+    },
 }
 // const CLOCK_POSITIONS = {
 //     0 : {letter : '0', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(90  * (Math.PI / 180)), y : CTR_POS_Y - STIMULI_DISTANCE * Math.sin(90  * (Math.PI / 180)) },
