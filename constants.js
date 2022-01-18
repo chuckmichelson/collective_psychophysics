@@ -10,10 +10,18 @@ const STIMULI_DISTANCE = 180;
 const CTR_POS_X = 256;
 const CTR_POS_Y = 256;
 
-const ANIMALS = {
+const STIMULI = {
   0 : {
-    target_name : 'elephant face',
+    category : 'animals',
+    target_name : 'elephant',
     image_path: 'images/animal_000.jpg',
+    x : 296,
+    y : 236,
+    },
+  1 : {
+    category : 'animals',
+    target_name : 'squirrel',
+    image_path: 'images/animal_001.jpg',
     x : 296,
     y : 236,
     },
