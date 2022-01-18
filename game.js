@@ -5,6 +5,7 @@ const { PLANCHETTE_WIDTH } = require('./constants');
 const { PLANCHETTE_HEIGHT } = require('./constants');
 const { MAX_PLAYERS_PER_ROOM } = require('./constants');
 const { AGREE_DURATION } = require('./constants');
+const { STIMULI } = require('./constants');
 
 const { makeid } = require('./utils');
 const { ouijaGoToLetter } = require('./utils');
@@ -168,6 +169,6 @@ function getUpdatedVelocity(keyCode) {
 
 
 function makeTrial(state) {
-  state.current_trial = STIMULI[0];
+  state.current_trial.stimulus = STIMULI[0];
   return state;
 }

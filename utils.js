@@ -1,5 +1,8 @@
 const { FRAME_RATE } = require('./constants');
 // const { CLOCK_POSITIONS } = require('./constants');
+const { STIMULI } = require('./constants');
+
+
 
 
 module.exports = {
@@ -48,8 +51,8 @@ function ouijaGetLetter(state) {
 
    for ( var i = 0; i < 1; i++ ) {
       // console.log(i)
-      codx = state.current_trial.x;
-      cody = state.current_trial.y;
+      codx = state.current_trial.stimulus.x;
+      cody = state.current_trial.stimulus.y;
       distance = Math.sqrt(Math.pow(codx - posx, 2) + Math.pow(cody - posy, 2));
       // console.log(distance);
       if (distance <= 15) {

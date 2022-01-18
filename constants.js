@@ -54,4 +54,5 @@ module.exports = {
   MAX_PLAYERS_PER_ROOM,
   // CLOCK_POSITIONS,
   AGREE_DURATION,
+  STIMULI,
 }
