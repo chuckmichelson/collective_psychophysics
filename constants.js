@@ -36,6 +36,11 @@ const STIMULI = {
     image_path: 'images/animal_004.jpg',
     x : 206, y : 241,
     },
+  5 : {
+    category : 'animals', target_name : 'owl',
+    image_path: 'images/animal_005.jpg',
+    x : 311, y : 226,
+    },
 }
 // const CLOCK_POSITIONS = {
 //     0 : {letter : '0', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(90  * (Math.PI / 180)), y : CTR_POS_Y - STIMULI_DISTANCE * Math.sin(90  * (Math.PI / 180)) },
