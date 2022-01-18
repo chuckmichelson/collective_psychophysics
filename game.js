@@ -47,7 +47,7 @@ function createGameState() {
     previous_letter: '_',
     current_letter: '_',
     agreed_letters: '',
-    current_trial: '',
+    current_trial: {},
   };
 }
 
