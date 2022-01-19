@@ -54,8 +54,8 @@ document.body.style.backgroundColor = "black";
 // setTimeout(() => { collapseSplash(); joinGame();}, 2000);
 
 // var btn = document.getElementById('blurBtn');
-var img = document.getElementById('blurImg');
-img.style.display = "none";
+// var img = document.getElementById('blurImg');
+// img.style.display = "none";
 
 // const layer1 = document.getElementById('layer1');
 // const ctx1 = layer1.getContext('2d');
