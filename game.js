@@ -68,7 +68,7 @@ function gameLoop(state) {
     return;
   }
 
-  if (state.current_letter == '1') {
+  if (state.agreed_letters.substr(state.agreed_letters.length - 1) == '1') {
     state = makeTrial(state);
   }
 
