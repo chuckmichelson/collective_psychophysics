@@ -96,13 +96,13 @@ let gameActive = false;
 
 function init() {
 
-  const layer1 = document.getElementById('layer1');
-  const ctx1 = layer1.getContext('2d');
-  search_image = new Image();
-  search_image.src = "images/animal_004.jpg";
-  // search_image.src = state.current_trial.stimulus.image_path;
-  layer1.style.filter = "blur(8px)";
-  ctx1.drawImage(search_image, 0, 0);
+  // const layer1 = document.getElementById('layer1');
+  // const ctx1 = layer1.getContext('2d');
+  // search_image = new Image();
+  // search_image.src = "images/animal_004.jpg";
+  // // search_image.src = state.current_trial.stimulus.image_path;
+  // layer1.style.filter = "blur(8px)";
+  // ctx1.drawImage(search_image, 0, 0);
 
 
   // /// draw the shape we want to use for clipping
@@ -246,7 +246,7 @@ function paintGame(state) {
   agreed_ctx.font = "18px Copperplate, Papyrus, fantasy";
   agreed_ctx.fillStyle = 'rgba(255, 255, 255, .5)';
   agreed_ctx.textAlign = "center";
-  agreed_ctx.fillText("Use the arrow keys to find the " + state.current_trial.target_name + "'s face.", 306, 20);
+  agreed_ctx.fillText("Use the arrow keys to find the " + state.current_trial.stimulus.target_name + "'s face.", 306, 20);
   // agreed_ctx.fillText("x: " + state.planchette.pos.x + " y: " + state.planchette.pos.y, 306, 20);
 }
 
@@ -350,7 +350,8 @@ function loadSearchImage(state) {
   const ctx1 = layer1.getContext('2d');
   search_image = new Image();
   // search_image.src = "images/animal_000.jpg";
-  search_image.src = state.current_trial.stimulus.image_path;
+  search_image.src = String(state.current_trial.stimulus.image_path);
+  console.log(state.current_trial.stimulus.image_path)
   layer1.style.filter = "blur(" + state.current_trial.blur + "px)";
   ctx1.drawImage(search_image, 0, 0);
 }
