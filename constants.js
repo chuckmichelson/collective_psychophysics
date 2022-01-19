@@ -60,7 +60,7 @@ const STIMULI = {
     },
   9 : {
     category : 'desks', target_name : 'calculator',
-    image_path: 'images/desk_009.jpg',
+    image_path: 'images/animal_009.jpg',
     x : 60, y : 140,
     },
 }
