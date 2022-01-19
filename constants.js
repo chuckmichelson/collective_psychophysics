@@ -6,7 +6,7 @@ const PLANCHETTE_HEIGHT = 120;
 const MAX_PLAYERS_PER_ROOM = 100;
 const AGREE_DURATION = 1000;
 const STIMULI_DISTANCE = 180;
-const BLUR = [0, 1, 2, 4, 8, 16];
+const BLUR = [0, 4, 8, 12, 16];
 const NUM_STIMULI = 10;
 
 const CTR_POS_X = 256;
