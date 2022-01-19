@@ -50,17 +50,17 @@ const STIMULI = {
     },
   7 : {
     category : 'animals', target_name : 'bear',
-    image_path: 'images/animal_006.jpg',
+    image_path: 'images/animal_007.jpg',
     x : 406, y : 226,
     },
   8 : {
     category : 'animals', target_name : 'orangutan',
-    image_path: 'images/animal_006.jpg',
+    image_path: 'images/animal_008.jpg',
     x : 211, y : 156,
     },
   9 : {
     category : 'desks', target_name : 'calculator',
-    image_path: 'images/desk_000.jpg',
+    image_path: 'images/desk_009.jpg',
     x : 60, y : 140,
     },
 }
