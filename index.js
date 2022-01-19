@@ -60,10 +60,11 @@ img.style.display = "none";
 const layer1 = document.getElementById('layer1');
 const ctx1 = layer1.getContext('2d');
 search_image = new Image();
-search_image.src = "images/animal_000.jpg";
+search_image.src = "images/animal_006.jpg";
 layer1.style.filter = "blur(8px)";
 ctx1.drawImage(search_image, 0, 0);
 
+showAbout()
 
 
 joinGame();
@@ -100,7 +101,7 @@ function init() {
   const layer1 = document.getElementById('layer1');
   const ctx1 = layer1.getContext('2d');
   search_image = new Image();
-  search_image.src = "images/animal_000.jpg";
+  search_image.src = "images/animal_006.jpg";
   // search_image.src = state.current_trial.stimulus.image_path;
   layer1.style.filter = "blur(8px)";
   ctx1.drawImage(search_image, 0, 0);
@@ -359,4 +360,30 @@ function loadSearchImage(state) {
 function handleNewTrial(state) {
   console.log("made it to handleNewTrial")
   loadSearchImage(state);
+}
+
+
+
+// function showAbout() {
+//   const layer4 = document.getElementById('layer4');
+//   const ctx4 = layer4.getContext('2d');
+//   ctx4.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+//   ctx4.fillStyle = "white";
+//   ctx4.textAlign = "center";
+//   ctx4.font = "96px Copperplate, Papyrus, fantasy";
+//   var message = "Testing a long line of text to see if the word wrap works.";
+//   ctx4.fillText(message, CANVAS_WIDTH/2, 20);
+// }
+
+
+function showAbout() {
+  const layer4 = document.getElementById('layer4');
+  const ctx4 = layer4.getContext('2d');
+  var txt = 'line 1\nline 2\nthird line..';
+  var x = 30;
+  var y = 30;
+  var lineheight = 15;
+  var lines = txt.split('\n');
+  for (var i = 0; i<lines.length; i++)
+      ctx4.fillText(lines[i], x, y + (i*lineheight) );
 }
