@@ -57,12 +57,12 @@ document.body.style.backgroundColor = "black";
 var img = document.getElementById('blurImg');
 img.style.display = "none";
 
-const layer1 = document.getElementById('layer1');
-const ctx1 = layer1.getContext('2d');
-search_image = new Image();
-search_image.src = "images/animal_004.jpg";
-layer1.style.filter = "blur(16px)";
-ctx1.drawImage(search_image, 0, 0);
+// const layer1 = document.getElementById('layer1');
+// const ctx1 = layer1.getContext('2d');
+// search_image = new Image();
+// search_image.src = "images/animal_004.jpg";
+// layer1.style.filter = "blur(16px)";
+// ctx1.drawImage(search_image, 0, 0);
 
 
 joinGame();
@@ -140,7 +140,7 @@ function paintGame(state) {
   if (state.current_letter == '1') {
     loadSearchImage(state);
   }
-  // loadSearchImage(state);
+  loadSearchImage(state);
 
   // display fovea
   const layer2 = document.getElementById('layer2');
