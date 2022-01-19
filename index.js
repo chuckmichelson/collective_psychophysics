@@ -140,7 +140,7 @@ function paintGame(state) {
   if (state.current_letter == '1') {
     loadSearchImage(state);
   }
-  // loadSearchImage(state);
+  loadSearchImage(state);
 
   // display fovea
   const layer2 = document.getElementById('layer2');
