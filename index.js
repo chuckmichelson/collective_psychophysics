@@ -60,11 +60,9 @@ img.style.display = "none";
 const layer1 = document.getElementById('layer1');
 const ctx1 = layer1.getContext('2d');
 search_image = new Image();
-search_image.src = "images/animal_006.jpg";
+search_image.src = "images/animal_005.jpg";
 layer1.style.filter = "blur(8px)";
 ctx1.drawImage(search_image, 0, 0);
-
-showAbout()
 
 
 joinGame();
@@ -101,7 +99,7 @@ function init() {
   const layer1 = document.getElementById('layer1');
   const ctx1 = layer1.getContext('2d');
   search_image = new Image();
-  search_image.src = "images/animal_006.jpg";
+  search_image.src = "images/animal_005.jpg";
   // search_image.src = state.current_trial.stimulus.image_path;
   layer1.style.filter = "blur(8px)";
   ctx1.drawImage(search_image, 0, 0);
