@@ -173,7 +173,7 @@ function getUpdatedVelocity(keyCode) {
 
 
 function makeTrial(state) {
-  stimIndex = Math.floor(Math.random() * BLUR.length)
+  stimIndex = Math.floor(Math.random() * (NUM_STIMULI - 1))
   state.current_trial.stimulus = STIMULI[stimIndex];
   state.current_trial.blur = BLUR[Math.floor(Math.random() * BLUR.length)];
   // console.log(state.current_trial.stimulus.image_path)
