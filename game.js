@@ -176,6 +176,8 @@ function makeTrial(state) {
   stimIndex = Math.floor(Math.random() * 10)
   state.current_trial.stimulus = STIMULI[stimIndex];
   state.current_trial.blur = BLUR[Math.floor(Math.random() * BLUR.length)];
+  state.planchette.pos.x = Math.floor(Math.random() * CANVAS_WIDTH);
+  state.planchette.pos.y = Math.floor(Math.random() * CANVAS_HEIGHT);
   // console.log(state.current_trial.stimulus.image_path)
   state.triggerNewTrial = true;
   return state;
