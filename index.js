@@ -1,5 +1,5 @@
 const CANVAS_WIDTH = 612;
-const CANVAS_HEIGHT = 512;
+const CANVAS_HEIGHT = 400;
 const PLANCHETTE_WIDTH = 120;
 const PLANCHETTE_HEIGHT = 120;
 const STIMULI_DISTANCE = 180;
@@ -145,7 +145,7 @@ function paintGame(state) {
   // display fovea
   const layer2 = document.getElementById('layer2');
   const ctx2 = layer2.getContext('2d');
-  ctx2.clearRect(0, 0, 612, 512);
+  ctx2.clearRect(0, 0, 612, 400);
   if (state.current_letter == '1') {
     ctx2.lineWidth = 12;
     ctx2.strokeStyle = 'green';
@@ -176,7 +176,7 @@ function paintGame(state) {
   // display score (spirits present)
   const left_layer2 = document.getElementById("left_layer2");
   const left_ctx2 = left_layer2.getContext("2d");
-  left_ctx2.clearRect(0, 0, 100, 512);
+  left_ctx2.clearRect(0, 0, 100, 400);
   left_ctx2.font = "120px Copperplate, Papyrus, fantasy";
   left_ctx2.fillStyle = 'rgba(255, 255, 255, .3)';
   left_ctx2.textAlign = "center";
@@ -281,7 +281,7 @@ function handleGameOver(state) {
 
   const right_layer2 = document.getElementById("right_layer2");
   const right_ctx2 = right_layer2.getContext("2d");
-  right_ctx2.clearRect(0, 0, 100, 512);
+  right_ctx2.clearRect(0, 0, 100, 400);
 
   // remove the planchette
   const layer2 = document.getElementById('layer2');
