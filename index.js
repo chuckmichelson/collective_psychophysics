@@ -247,7 +247,8 @@ function paintGame(state) {
   agreed_ctx.font = "18px Copperplate, Papyrus, fantasy";
   agreed_ctx.fillStyle = 'rgba(255, 255, 255, .5)';
   agreed_ctx.textAlign = "center";
-  agreed_ctx.fillText("Use the arrow keys to find the " + state.current_trial.stimulus.target_name + "'s face.", 306, 20);
+  // agreed_ctx.fillText("Use the arrow keys to find the " + state.current_trial.stimulus.target_name + "'s face.", 306, 20);
+  agreed_ctx.fillText("Use the arrow keys to find the " + state.current_trial.stimulus.target_name + ".", 306, 20);
   // agreed_ctx.fillText("x: " + state.planchette.pos.x + " y: " + state.planchette.pos.y, 306, 20);
 }
 

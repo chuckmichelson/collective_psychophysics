@@ -6,6 +6,7 @@ const { PLANCHETTE_HEIGHT } = require('./constants');
 const { MAX_PLAYERS_PER_ROOM } = require('./constants');
 const { AGREE_DURATION } = require('./constants');
 const { ANIMALS } = require('./constants');
+const { DESKS } = require('./constants');
 const { NUM_ANIMALS } = require('./constants');
 const { BLUR } = require('./constants');
 
@@ -173,8 +174,10 @@ function getUpdatedVelocity(keyCode) {
 
 
 function makeTrial(state) {
-  stimIndex = Math.floor(Math.random() * 10)
-  state.current_trial.stimulus = ANIMALS[stimIndex];
+  // stimIndex = 8;
+  stimIndex = Math.floor(Math.random() * 8)
+  state.current_trial.stimulus = DESKS[stimIndex];
+  // state.current_trial.blur = BLUR[0];
   state.current_trial.blur = BLUR[Math.floor(Math.random() * BLUR.length)];
   state.planchette.pos.x = Math.floor(Math.random() * CANVAS_WIDTH);
   state.planchette.pos.y = Math.floor(Math.random() * CANVAS_HEIGHT);

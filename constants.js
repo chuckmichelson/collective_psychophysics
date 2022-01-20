@@ -58,12 +58,54 @@ const ANIMALS = {
     image_path: 'images/animal_008.jpg',
     x : 211, y : 156,
     },
-  9 : {
+}
+
+
+const DESKS = {
+  0 : {
     category : 'desks', target_name : 'calculator',
-    image_path: 'images/animal_009.jpg',
+    image_path: 'images/desk_000.jpg',
     x : 235, y : 90,
     },
+  1 : {
+    category : 'desks', target_name : 'earbuds',
+    image_path: 'images/desk_001.jpg',
+    x : 365, y : 182,
+    },
+  2 : {
+    category : 'desks', target_name : 'crumpled papers',
+    image_path: 'images/desk_002.jpg',
+    x : 283, y : 304,
+    },
+  3 : {
+    category : 'desks', target_name : 'rubber band ball',
+    image_path: 'images/desk_003.jpg',
+    x : 492, y : 278,
+    },
+  4 : {
+    category : 'desks', target_name : 'robot toy',
+    image_path: 'images/desk_004.jpg',
+    x : 552, y : 220,
+    },
+  5 : {
+    category : 'desks', target_name : 'paperclips',
+    image_path: 'images/desk_005.jpg',
+    x : 532, y : 245,
+    },
+  6 : {
+    category : 'desks', target_name : 'broccoli',
+    image_path: 'images/desk_006.jpg',
+    x : 552, y : 340,
+    },
+  7 : {
+    category : 'desks', target_name : 'cherry tomatos',
+    image_path: 'images/desk_007.jpg',
+    x : 355, y : 60,
+    },
 }
+
+
+
 // const CLOCK_POSITIONS = {
 //     0 : {letter : '0', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(90  * (Math.PI / 180)), y : CTR_POS_Y - STIMULI_DISTANCE * Math.sin(90  * (Math.PI / 180)) },
 //     1 : {letter : '1', x : CTR_POS_X + STIMULI_DISTANCE * Math.cos(60  * (Math.PI / 180)), y : CTR_POS_Y - STIMULI_DISTANCE * Math.sin(60  * (Math.PI / 180)) },
@@ -93,5 +135,6 @@ module.exports = {
   // CLOCK_POSITIONS,
   AGREE_DURATION,
   ANIMALS,
+  DESKS,
   BLUR,
 }
