@@ -1,18 +1,18 @@
 const FRAME_RATE = 10;
 const CANVAS_WIDTH = 612;
-const CANVAS_HEIGHT = 512;
+const CANVAS_HEIGHT = 400;
 const PLANCHETTE_WIDTH = 120;
 const PLANCHETTE_HEIGHT = 120;
 const MAX_PLAYERS_PER_ROOM = 100;
 const AGREE_DURATION = 1000;
 const STIMULI_DISTANCE = 180;
-const BLUR = [0, 4, 8, 12, 16];
+const BLUR = [0, 8, 16, 32];
 const NUM_STIMULI = 10;
 
 const CTR_POS_X = 256;
 const CTR_POS_Y = 256;
 
-const STIMULI = {
+const ANIMALS = {
   0 : {
     category : 'animals', target_name : 'elephant',
     image_path: 'images/animal_000.jpg',
@@ -61,7 +61,7 @@ const STIMULI = {
   9 : {
     category : 'desks', target_name : 'calculator',
     image_path: 'images/animal_009.jpg',
-    x : 60, y : 140,
+    x : 235, y : 90,
     },
 }
 // const CLOCK_POSITIONS = {
@@ -92,6 +92,6 @@ module.exports = {
   MAX_PLAYERS_PER_ROOM,
   // CLOCK_POSITIONS,
   AGREE_DURATION,
-  STIMULI,
+  ANIMALS,
   BLUR,
 }
