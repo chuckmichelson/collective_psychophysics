@@ -65,6 +65,7 @@ document.body.style.backgroundColor = "black";
 // ctx1.drawImage(search_image, 0, 0);
 
 
+
 joinGame();
 
 function collapseSplash() {
@@ -138,12 +139,38 @@ function paintGame(state) {
 
   // // update the background if it's a new trial
   // console.log(state.agreed_letters)
-  // if (state.agreed_letters == '1') {
+  // if (state.agreed_letters.substr(state.agreed_letters.length - 1) == '1') {
   //   console.log("+++++++++++++++++")
   //   loadSearchImage(state);
   // }
-
+  // showThumbnails(state);
   loadSearchImage(state);
+
+  // display thumbnails
+  const right_layer2 = document.getElementById('right_layer2');
+  const right_ctx2 = right_layer2.getContext('2d');
+  right_ctx2.clearRect(0, 0, 100, 400);
+  right_ctx2.lineWidth = 6;
+  right_ctx2.strokeStyle = 'white';
+
+  search_image = new Image();
+  search_image.src = String(state.current_trial.stimulus.image_path);
+
+  right_ctx2.save();
+  right_ctx2.moveTo(state.current_trial.stimulus.x + FOVEA_RADIUS, state.current_trial.stimulus.y + FOVEA_RADIUS);
+  right_ctx2.beginPath();
+  dTheta = 10;
+  for ( var i = 0; i < 360 / dTheta + 1; i++ ) {
+    theta = dTheta * i;
+    codx = state.current_trial.stimulus.x + FOVEA_RADIUS * Math.cos(theta  * (Math.PI / 180));
+    cody = state.current_trial.stimulus.y + FOVEA_RADIUS * Math.sin(theta  * (Math.PI / 180));
+    right_ctx2.lineTo(codx, cody);
+    right_ctx2.stroke();
+  }
+  right_ctx2.closePath();
+  right_ctx2.clip();
+  right_ctx2.drawImage(search_image, - state.current_trial.stimulus.x, - state.current_trial.stimulus.y);
+  right_ctx2.restore();
 
   // display fovea
   const layer2 = document.getElementById('layer2');
@@ -354,9 +381,10 @@ function loadSearchImage(state) {
   const layer1 = document.getElementById('layer1');
   const ctx1 = layer1.getContext('2d');
   search_image = new Image();
-  // search_image.src = "images/animal_000.jpg";
+  // search_image.src = "images/animal_001.jpg";
+  // console.log(state.current_trial.blur)
   search_image.src = state.current_trial.stimulus.image_path;
-  console.log(state.current_trial.stimulus.image_path)
+  // console.log("**** " + state.current_trial.stimulus.image_path)
   layer1.style.filter = "blur(" + state.current_trial.blur + "px)";
   ctx1.drawImage(search_image, 0, 0);
 }
@@ -390,4 +418,32 @@ function showAbout() {
   var lines = txt.split('\n');
   for (var i = 0; i<lines.length; i++)
       ctx4.fillText(lines[i], x, y + (i*lineheight) );
+}
+
+function showThumbnails(state) {
+  // display fovea
+  const right_layer2 = document.getElementById('right_layer2');
+  const right_ctx2 = right_layer2.getContext('2d');
+  right_ctx2.clearRect(0, 0, 100, 400);
+  right_ctx2.lineWidth = 6;
+  right_ctx2.strokeStyle = 'black';
+
+  search_image = new Image();
+  search_image.src = String(state.current_trial.stimulus.image_path);
+
+  right_ctx2.save();
+  right_ctx2.moveTo(state.planchette.pos.x + FOVEA_RADIUS, state.planchette.pos.y + FOVEA_RADIUS);
+  right_ctx2.beginPath();
+  dTheta = 10;
+  for ( var i = 0; i < 360 / dTheta + 1; i++ ) {
+    theta = dTheta * i;
+    codx = state.current_trial.stimulus.x + FOVEA_RADIUS * Math.cos(theta  * (Math.PI / 180));
+    cody = state.current_trial.stimulus.y + FOVEA_RADIUS * Math.sin(theta  * (Math.PI / 180));
+    right_ctx2.lineTo(codx, cody);
+    right_ctx2.stroke();
+  }
+  right_ctx2.closePath();
+  right_ctx2.clip();
+  right_ctx2.drawImage(search_image, - state.current_trial.stimulus.x, - state.current_trial.stimulus.y);
+  right_ctx2.restore();
 }

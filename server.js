@@ -161,6 +161,7 @@ function emitScore(room, score) {
 
 function emitNewTrial(room, gameState) {
   // Send this event to everyone in the room.
+  console.log(gameState.current_trial.stimulus.target_name)
   io.sockets.in(room)
     .emit('newTrial', JSON.stringify(gameState));
 }
