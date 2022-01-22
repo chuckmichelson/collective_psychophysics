@@ -34,6 +34,7 @@ function initGame() {
 function createGameState() {
   return {
     current_game_active: false,
+    is_bonus_round: true,
     numSpirits: 1,
     x: Array(100).fill(0),
     y: Array(100).fill(0),
