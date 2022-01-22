@@ -88,7 +88,7 @@ const DESKS = {
     x : 552, y : 220,
     },
   5 : {
-    category : 'desks', target_name : 'paperclips',
+    category : 'desks', target_name : 'pile of paperclips',
     image_path: 'images/desk_005.jpg',
     x : 532, y : 245,
     },

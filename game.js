@@ -50,8 +50,8 @@ function createGameState() {
       }
     },
     previous_letter: '_',
-    current_letter: '_',
-    agreed_letters: '',
+    current_letter: '',
+    agreed_letters: '1',
     current_trial: {},
     triggerNewTrial: false,
   };

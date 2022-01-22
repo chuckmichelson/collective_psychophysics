@@ -136,10 +136,13 @@ function keyDown(e) {
 
 function paintGame(state) {
 
-  // update the background if it's a new trial
-  if (state.current_letter == '1') {
-    loadSearchImage(state);
-  }
+  // // update the background if it's a new trial
+  // console.log(state.agreed_letters)
+  // if (state.agreed_letters == '1') {
+  //   console.log("+++++++++++++++++")
+  //   loadSearchImage(state);
+  // }
+
   loadSearchImage(state);
 
   // display fovea
@@ -284,10 +287,10 @@ function handleGameOver(state) {
   const right_ctx2 = right_layer2.getContext("2d");
   right_ctx2.clearRect(0, 0, 100, 400);
 
-  // remove the planchette
-  const layer2 = document.getElementById('layer2');
-  const ctx2 = layer2.getContext('2d');
-  ctx2.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+  // // remove the planchette
+  // const layer2 = document.getElementById('layer2');
+  // const ctx2 = layer2.getContext('2d');
+  // ctx2.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
   // // remove the ouija board
   // const layer1 = document.getElementById('layer1');
@@ -352,7 +355,7 @@ function loadSearchImage(state) {
   const ctx1 = layer1.getContext('2d');
   search_image = new Image();
   // search_image.src = "images/animal_000.jpg";
-  search_image.src = String(state.current_trial.stimulus.image_path);
+  search_image.src = state.current_trial.stimulus.image_path;
   console.log(state.current_trial.stimulus.image_path)
   layer1.style.filter = "blur(" + state.current_trial.blur + "px)";
   ctx1.drawImage(search_image, 0, 0);

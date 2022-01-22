@@ -126,6 +126,12 @@ function startGameInterval(roomName) {
 
     if (!winner) {
       emitGameState(roomName, state[roomName]);
+      console.log(state[roomName].triggerNewTrial)
+      if (state[roomName].triggerNewTrial) {
+        console.log("Made it to call to emit new trial")
+        emitNewTrial(roomName, state[roomName]);
+        state[roomName].triggerNewTrial = false;
+      }
     } else {
       emitGameOver(roomName, state[roomName]);
       // state[roomName] = null;
