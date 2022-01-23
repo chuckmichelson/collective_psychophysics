@@ -149,8 +149,10 @@ function paintGame(state) {
 
   if (state.is_bonus_round == true) {
     console.log("BONUS ROUND")
+    document.body.style.backgroundColor = "white";
     // display fovea
     const layer1 = document.getElementById('layer1');
+    layer1.style.filter = "blur(" + 0 + "px)";
     const ctx1 = layer1.getContext('2d');
     // ctx2.fillStyle = 'white';
 
@@ -167,10 +169,10 @@ function paintGame(state) {
     agreed_ctx.fillStyle = 'black';
     agreed_ctx.clearRect(0, 0, 612, 48);
     agreed_ctx.font = "16px Copperplate, Papyrus, fantasy";
-    agreed_ctx.fillStyle = 'rgba(255, 255, 255, .5)';
+    agreed_ctx.fillStyle = 'rgba(0, 0, 0, .5)';
     agreed_ctx.textAlign = "center";
     // agreed_ctx.fillText("Use the arrow keys to find the " + state.current_trial.stimulus.target_name + "'s face.", 306, 20);
-    agreed_ctx.fillText("Use the arrow keys to put the dollar in the charity of your choice.", 306, 30);
+    agreed_ctx.fillText("Use the arrow keys to put the dollar in the non-profit of your choice.", 306, 30);
     // agreed_ctx.fillText("x: " + state.planchette.pos.x + " y: " + state.planchette.pos.y, 306, 20);
 
     const layer2 = document.getElementById('layer2');
@@ -178,10 +180,6 @@ function paintGame(state) {
     ctx2.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     var dollar = new Image();
     dollar.src = "images/dollar.jpg";
-    if (state.dollar.picked_up = true) {
-      state.dollar.pos.x = state.planchette.pos.x;
-      state.dollar.pos.y = state.planchette.pos.y;
-    }
     ctx2.drawImage(dollar, state.dollar.pos.x - DOLLAR_WIDTH / 2, state.dollar.pos.y - DOLLAR_HEIGHT / 2);
 
     const layer3 = document.getElementById('layer3');
@@ -190,6 +188,10 @@ function paintGame(state) {
     ctx3.clearRect(0, 0, 612, 400);
     ctx3.lineWidth = 4;
     ctx3.strokeStyle = 'black';
+    if (state.dollar.picked_up == true) {
+      // ctx3.lineWidth = 6;
+      // ctx3.strokeStyle = 'green';
+    }
     ctx3.save();
     ctx3.moveTo(state.planchette.pos.x + FOVEA_RADIUS, state.planchette.pos.y + FOVEA_RADIUS);
     ctx3.beginPath();
@@ -203,8 +205,31 @@ function paintGame(state) {
     }
     ctx3.closePath();
     ctx3.restore();
+
+    // display score (spirits present)
+    const left_layer2 = document.getElementById("left_layer2");
+    const left_ctx2 = left_layer2.getContext("2d");
+    left_ctx2.clearRect(0, 0, 100, 400);
+    left_ctx2.font = "120px Copperplate, Papyrus, fantasy";
+    left_ctx2.fillStyle = 'rgba(0, 0, 0, .3)';
+    left_ctx2.textAlign = "center";
+    numSpirits = state.numSpirits;
+    if (numSpirits == undefined) {
+      numSpirits = '1';
+    }
+    left_ctx2.fillText(numSpirits, 50, 80);
+    left_ctx2.fillStyle = 'rgba(0, 0, 0, .3)';
+    left_ctx2.font = "24px Copperplate, Papyrus, fantasy";
+    display_text = "Players"
+    if (numSpirits == 1) {
+      display_text = "Player"
+    }
+    left_ctx2.fillText(display_text, 50, 110);
+    left_ctx2.fillText("Present", 50, 135);
+
   } else {
 
+    document.body.style.backgroundColor = "black";
     loadSearchImage(state);
 
 
@@ -297,28 +322,30 @@ function paintGame(state) {
     // agreed_ctx.fillText("Use the arrow keys to find the " + state.current_trial.stimulus.target_name + "'s face.", 306, 20);
     agreed_ctx.fillText("Use the arrow keys to find the " + state.current_trial.stimulus.target_name + ".", 306, 20);
     // agreed_ctx.fillText("x: " + state.planchette.pos.x + " y: " + state.planchette.pos.y, 306, 20);
+
+    // display score (spirits present)
+    const left_layer2 = document.getElementById("left_layer2");
+    const left_ctx2 = left_layer2.getContext("2d");
+    left_ctx2.clearRect(0, 0, 100, 400);
+    left_ctx2.font = "120px Copperplate, Papyrus, fantasy";
+    left_ctx2.fillStyle = 'rgba(255, 255, 255, .3)';
+    left_ctx2.textAlign = "center";
+    numSpirits = state.numSpirits;
+    if (numSpirits == undefined) {
+      numSpirits = '1';
+    }
+    left_ctx2.fillText(numSpirits, 50, 80);
+    left_ctx2.fillStyle = 'rgba(255, 255, 255, .3)';
+    left_ctx2.font = "24px Copperplate, Papyrus, fantasy";
+    display_text = "Players"
+    if (numSpirits == 1) {
+      display_text = "Player"
+    }
+    left_ctx2.fillText(display_text, 50, 110);
+    left_ctx2.fillText("Present", 50, 135);
+
   }
 
-  // display score (spirits present)
-  const left_layer2 = document.getElementById("left_layer2");
-  const left_ctx2 = left_layer2.getContext("2d");
-  left_ctx2.clearRect(0, 0, 100, 400);
-  left_ctx2.font = "120px Copperplate, Papyrus, fantasy";
-  left_ctx2.fillStyle = 'rgba(255, 255, 255, .3)';
-  left_ctx2.textAlign = "center";
-  numSpirits = state.numSpirits;
-  if (numSpirits == undefined) {
-    numSpirits = '1';
-  }
-  left_ctx2.fillText(numSpirits, 50, 80);
-  left_ctx2.fillStyle = 'rgba(255, 255, 255, .3)';
-  left_ctx2.font = "24px Copperplate, Papyrus, fantasy";
-  display_text = "Players"
-  if (numSpirits == 1) {
-    display_text = "Player"
-  }
-  left_ctx2.fillText(display_text, 50, 110);
-  left_ctx2.fillText("Present", 50, 135);
 }
 
 

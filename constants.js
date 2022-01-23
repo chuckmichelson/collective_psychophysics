@@ -10,7 +10,8 @@ const BLUR = [0, 8, 16, 32];
 const NUM_STIMULI = 10;
 const DOLLAR_WIDTH = 80;
 const DOLLAR_HEIGHT = 38;
-
+const NUM_ANIMALS = 9;
+const NUM_DESKS = 8;
 
 const CTR_POS_X = 256;
 const CTR_POS_Y = 256;
@@ -138,6 +139,8 @@ module.exports = {
   // CLOCK_POSITIONS,
   AGREE_DURATION,
   ANIMALS,
+  NUM_ANIMALS,
   DESKS,
+  NUM_DESKS,
   BLUR,
 }

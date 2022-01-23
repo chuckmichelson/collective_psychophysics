@@ -8,6 +8,7 @@ const { AGREE_DURATION } = require('./constants');
 const { ANIMALS } = require('./constants');
 const { DESKS } = require('./constants');
 const { NUM_ANIMALS } = require('./constants');
+const { NUM_DESKS } = require('./constants');
 const { BLUR } = require('./constants');
 const { DOLLAR_WIDTH } = require('./constants');
 const { DOLLAR_HEIGHT } = require('./constants');
@@ -40,7 +41,10 @@ function initGame() {
 function createGameState() {
   return {
     current_game_active: false,
-    is_bonus_round: true,
+    level_num: 1,
+    trial_num: 1,
+    stimIndices: [],
+    is_bonus_round: false,
     numSpirits: 1,
     x: Array(100).fill(0),
     y: Array(100).fill(0),
@@ -66,7 +70,7 @@ function createGameState() {
     },
     previous_letter: '_',
     current_letter: '_',
-    agreed_letters: '_',
+    agreed_letters: '1',
     current_trial: {},
     triggerNewTrial: false,
   };
@@ -84,10 +88,24 @@ function gameLoop(state) {
     return;
   }
 
+  // update levels
   if (state.agreed_letters.substr(state.agreed_letters.length - 1) == '1') {
-    state = makeTrial(state);
     state.agreed_letters = '_';
+    if (state.trial_num > 4) {
+      state.trial_num = 1;
+      state.level_num += 1;
+      if (state.level_num > 2) {
+        state.is_bonus_round = true;
+      }
+    }
+    if (state.trial_num == 1) {
+      state = makeTrialList(state);
+    }
+    state = makeTrial(state);
+    state.trial_num += 1;
   }
+
+
 
   // decision rule
   for (let i = 0; i < MAX_PLAYERS_PER_ROOM; i++) {
@@ -162,11 +180,11 @@ function gameLoop(state) {
     posy = state.planchette.pos.y;
     codx = state.dollar.pos.x;
     cody = state.dollar.pos.y;
-    console.log("posx: " + posx + "posy: " + posy + "codx: " + codx + "cody: " + cody)
+    // console.log("posx: " + posx + "posy: " + posy + "codx: " + codx + "cody: " + cody)
     distance = Math.sqrt(Math.pow(codx - posx, 2) + Math.pow(cody - posy, 2));
-    console.log(distance)
+    // console.log(distance)
     if (distance < 15) {
-      // state.dollar.picked_up = true;
+      state.dollar.picked_up = true;
     }
     if (state.dollar.picked_up == true) {
       state.dollar.pos.x = state.planchette.pos.x;
@@ -206,15 +224,44 @@ function getUpdatedVelocity(keyCode) {
 }
 
 
-function makeTrial(state) {
+function makeTrialList(state) {
   // stimIndex = 8;
-  stimIndex = Math.floor(Math.random() * 8)
-  state.current_trial.stimulus = DESKS[stimIndex];
-  // state.current_trial.blur = BLUR[0];
-  state.current_trial.blur = BLUR[Math.floor(Math.random() * BLUR.length)];
+  console.log("made it to makeTrialList")
+  if (state.level_num == 1) { // animals
+    console.log("level 1")
+    const array = Array.from({length: NUM_ANIMALS}, (_, index) => index);
+    const shuffledArray = array.sort((a, b) => 0.5 - Math.random());
+    state.stimIndices = array.slice(0, 4);
+    console.log(state.stimIndices)
+    console.log(state.stimIndices[0])
+  }
+  if (state.level_num == 2) { // desks
+    console.log("level 2")
+    const array = Array.from({length: NUM_DESKS}, (_, index) => index);
+    const shuffledArray = array.sort((a, b) => 0.5 - Math.random());
+    state.stimIndices = array.slice(0, 4);
+    console.log(state.stimIndices)
+    console.log(state.stimIndices[0])
+  }
+  return state;
+}
+
+function makeTrial(state) {
+  console.log("made it to makeTrial")
+  console.log(state.stimIndices)
+  console.log(state.trial_num)
+  console.log(state.stimIndices[state.trial_num - 1])
+  if (state.level_num == 1) { // animals
+    console.log("#level 1")
+    state.current_trial.stimulus = ANIMALS[state.stimIndices[state.trial_num - 1]];
+  }
+  if (state.level_num == 2) { // desks
+    state.current_trial.stimulus = DESKS[state.stimIndices[state.trial_num - 1]];
+    console.log("#level 2")
+  }
+  state.current_trial.blur = BLUR[state.trial_num - 1];
   state.planchette.pos.x = Math.floor(Math.random() * CANVAS_WIDTH);
   state.planchette.pos.y = Math.floor(Math.random() * CANVAS_HEIGHT);
-  // console.log(state.current_trial.stimulus.image_path)
   state.triggerNewTrial = true;
   return state;
 }
