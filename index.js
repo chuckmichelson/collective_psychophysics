@@ -5,7 +5,8 @@ const PLANCHETTE_HEIGHT = 120;
 const STIMULI_DISTANCE = 180;
 const STIMULI_OFFSET = 12;
 const FOVEA_RADIUS = 50;
-const DOLLAR_WIDTH = 100;
+const DOLLAR_WIDTH = 80;
+const DOLLAR_HEIGHT = 38;
 
 const CTR_POS_X = 256;
 const CTR_POS_Y = 256;
@@ -174,11 +175,14 @@ function paintGame(state) {
 
     const layer2 = document.getElementById('layer2');
     const ctx2 = layer2.getContext('2d');
+    ctx2.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     var dollar = new Image();
     dollar.src = "images/dollar.jpg";
-    ctx2.drawImage(dollar, CANVAS_WIDTH / 4 - DOLLAR_WIDTH / 2, 300);
-    ctx2.drawImage(dollar, CANVAS_WIDTH / 2 - DOLLAR_WIDTH / 2, 300);
-    ctx2.drawImage(dollar, CANVAS_WIDTH * 3 / 4 - DOLLAR_WIDTH / 2, 300);
+    if (state.dollar.picked_up = true) {
+      state.dollar.pos.x = state.planchette.pos.x;
+      state.dollar.pos.y = state.planchette.pos.y;
+    }
+    ctx2.drawImage(dollar, state.dollar.pos.x - DOLLAR_WIDTH / 2, state.dollar.pos.y - DOLLAR_HEIGHT / 2);
 
     const layer3 = document.getElementById('layer3');
     const ctx3 = layer3.getContext('2d');

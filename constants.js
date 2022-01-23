@@ -8,6 +8,9 @@ const AGREE_DURATION = 1000;
 const STIMULI_DISTANCE = 180;
 const BLUR = [0, 8, 16, 32];
 const NUM_STIMULI = 10;
+const DOLLAR_WIDTH = 80;
+const DOLLAR_HEIGHT = 38;
+
 
 const CTR_POS_X = 256;
 const CTR_POS_Y = 256;

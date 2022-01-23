@@ -9,6 +9,12 @@ const { ANIMALS } = require('./constants');
 const { DESKS } = require('./constants');
 const { NUM_ANIMALS } = require('./constants');
 const { BLUR } = require('./constants');
+const { DOLLAR_WIDTH } = require('./constants');
+const { DOLLAR_HEIGHT } = require('./constants');
+
+
+
+
 
 const { makeid } = require('./utils');
 const { ouijaGoToLetter } = require('./utils');
@@ -49,6 +55,14 @@ function createGameState() {
         x: 0,
         y: 0,
       }
+    },
+    dollar: {
+      pos: {
+        x: CANVAS_WIDTH / 2,
+        y: 320,
+      },
+      picked_up: false,
+      put_down: false,
     },
     previous_letter: '_',
     current_letter: '_',
@@ -141,6 +155,24 @@ function gameLoop(state) {
   // reset all player velocities to 0 so the user must hold down the arrow keys
   state.x = Array(5).fill(0);
   state.y = Array(5).fill(0);
+
+
+  if (state.is_bonus_round == true) {
+    posx = state.planchette.pos.x;
+    posy = state.planchette.pos.y;
+    codx = state.dollar.pos.x;
+    cody = state.dollar.pos.y;
+    console.log("posx: " + posx + "posy: " + posy + "codx: " + codx + "cody: " + cody)
+    distance = Math.sqrt(Math.pow(codx - posx, 2) + Math.pow(cody - posy, 2));
+    console.log(distance)
+    if (distance < 15) {
+      // state.dollar.picked_up = true;
+    }
+    if (state.dollar.picked_up == true) {
+      state.dollar.pos.x = state.planchette.pos.x;
+      state.dollar.pos.y = state.planchette.pos.y;
+    }
+  }
 
   // return with no exit code
   return false;
