@@ -51,7 +51,7 @@ io.on('connection', client => {
 
 
   function handleJoinGame(roomName) {
-    console.log("made it to handleJoinGame")
+    // console.log("made it to handleJoinGame")
     const room = io.sockets.adapter.rooms[roomName];
 
     let allUsers;
@@ -126,7 +126,7 @@ function startGameInterval(roomName) {
 
     if (!winner) {
       emitGameState(roomName, state[roomName]);
-      console.log(state[roomName].triggerNewTrial)
+      // console.log(state[roomName].triggerNewTrial)
       if (state[roomName].triggerNewTrial) {
         console.log("Made it to call to emit new trial")
         emitNewTrial(roomName, state[roomName]);
