@@ -1,6 +1,8 @@
 const { FRAME_RATE } = require('./constants');
 // const { CLOCK_POSITIONS } = require('./constants');
 const { STIMULI } = require('./constants');
+const { CHARITIES } = require('./constants');
+const { NUM_CHARITIES } = require('./constants');
 
 
 
@@ -49,17 +51,34 @@ function ouijaGetLetter(state) {
    posx = state.planchette.pos.x;
    posy = state.planchette.pos.y;
 
-   for ( var i = 0; i < 1; i++ ) {
-      // console.log(i)
-      codx = state.current_trial.stimulus.x;
-      cody = state.current_trial.stimulus.y;
-      distance = Math.sqrt(Math.pow(codx - posx, 2) + Math.pow(cody - posy, 2));
-      // console.log(distance);
-      if (distance <= 15) {
-         letter = '1';
-         // console.log('Your letter is: ' + letter);
+   if (state.is_bonus_round == true) {
+      for ( var i = 0; i < NUM_CHARITIES; i++ ) {
+         // console.log(i)
+         codx = CHARITIES[i].x;
+         cody = CHARITIES[i].y;
+         distance = Math.sqrt(Math.pow(codx - posx, 2) + Math.pow(cody - posy, 2));
+         // console.log(distance);
+         if (distance <= 15) {
+            letter = 'C';
+            state.agreed_charity = CHARITIES[i].name;
+            // console.log(state.agreed_charity)
+         }
+      }
+
+   } else {
+      for ( var i = 0; i < 1; i++ ) {
+         // console.log(i)
+         codx = state.current_trial.stimulus.x;
+         cody = state.current_trial.stimulus.y;
+         distance = Math.sqrt(Math.pow(codx - posx, 2) + Math.pow(cody - posy, 2));
+         // console.log(distance);
+         if (distance <= 15) {
+            letter = '1';
+            // console.log('Your letter is: ' + letter);
+         }
       }
    }
+
    // if (posy >= 494 && posx >= 280 && posx <= 562) {
    //    letter = '.'; // i.e., GOODBYE
    // }

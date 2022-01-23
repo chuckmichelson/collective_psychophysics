@@ -27,8 +27,8 @@ const CTR_POS_Y = 256;
 // }
 
 // ***** CHANGE THIS TO RUN ON HEROKU
-const socket = io('http://localhost:3000');
-// const socket = io('https://collective-psychophysics.herokuapp.com/');
+// const socket = io('http://localhost:3000');
+const socket = io('https://collective-psychophysics.herokuapp.com/');
 
 socket.on('init', handleInit);
 socket.on('gameState', handleGameState);
@@ -150,6 +150,7 @@ function paintGame(state) {
   if (state.is_bonus_round == true) {
     console.log("BONUS ROUND")
     document.body.style.backgroundColor = "white";
+
     // display fovea
     const layer1 = document.getElementById('layer1');
     layer1.style.filter = "blur(" + 0 + "px)";
@@ -172,15 +173,17 @@ function paintGame(state) {
     agreed_ctx.fillStyle = 'rgba(0, 0, 0, .5)';
     agreed_ctx.textAlign = "center";
     // agreed_ctx.fillText("Use the arrow keys to find the " + state.current_trial.stimulus.target_name + "'s face.", 306, 20);
-    agreed_ctx.fillText("Use the arrow keys to put the dollar in the non-profit of your choice.", 306, 30);
+    agreed_ctx.fillText("Use the arrow keys to drag the dollar to the non-profit of your choice.", 306, 30);
     // agreed_ctx.fillText("x: " + state.planchette.pos.x + " y: " + state.planchette.pos.y, 306, 20);
 
     const layer2 = document.getElementById('layer2');
     const ctx2 = layer2.getContext('2d');
     ctx2.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-    var dollar = new Image();
-    dollar.src = "images/dollar.jpg";
-    ctx2.drawImage(dollar, state.dollar.pos.x - DOLLAR_WIDTH / 2, state.dollar.pos.y - DOLLAR_HEIGHT / 2);
+    if (state.dollar.put_down == false) {
+      var dollar = new Image();
+      dollar.src = "images/dollar.jpg";
+      ctx2.drawImage(dollar, state.dollar.pos.x - DOLLAR_WIDTH / 2, state.dollar.pos.y - DOLLAR_HEIGHT / 2);
+    }
 
     const layer3 = document.getElementById('layer3');
     const ctx3 = layer3.getContext('2d');
@@ -188,9 +191,12 @@ function paintGame(state) {
     ctx3.clearRect(0, 0, 612, 400);
     ctx3.lineWidth = 4;
     ctx3.strokeStyle = 'black';
-    if (state.dollar.picked_up == true) {
-      // ctx3.lineWidth = 6;
-      // ctx3.strokeStyle = 'green';
+    if (state.dollar.picked_up == true && state.dollar.put_down == false && state.current_letter == 'C') {
+      ctx3.lineWidth = 12;
+      ctx3.strokeStyle = 'green';
+    } else {
+      ctx3.lineWidth = 6;
+      ctx3.strokeStyle = 'black';
     }
     ctx3.save();
     ctx3.moveTo(state.planchette.pos.x + FOVEA_RADIUS, state.planchette.pos.y + FOVEA_RADIUS);
@@ -226,6 +232,11 @@ function paintGame(state) {
     }
     left_ctx2.fillText(display_text, 50, 110);
     left_ctx2.fillText("Present", 50, 135);
+
+    if (state.dollar.put_down == true) {
+      console.log("***** DONE")
+    }
+
 
   } else {
 
@@ -403,7 +414,7 @@ function handleGameOver(state) {
   ctx4.fillStyle = "white";
   ctx4.textAlign = "center";
   ctx4.font = "96px Copperplate, Papyrus, fantasy";
-  var final_message = state.agreed_letters.substring(0, state.agreed_letters.length - 1);;
+  var final_message = state.agreed_charity;
   ctx4.fillText(final_message, CANVAS_WIDTH/2, CANVAS_HEIGHT/2);
 
   // data = JSON.parse(data);

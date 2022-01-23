@@ -7,8 +7,10 @@ const { MAX_PLAYERS_PER_ROOM } = require('./constants');
 const { AGREE_DURATION } = require('./constants');
 const { ANIMALS } = require('./constants');
 const { DESKS } = require('./constants');
+const { CHARITIES } = require('./constants');
 const { NUM_ANIMALS } = require('./constants');
 const { NUM_DESKS } = require('./constants');
+const { NUM_CHARITIES } = require('./constants');
 const { BLUR } = require('./constants');
 const { DOLLAR_WIDTH } = require('./constants');
 const { DOLLAR_HEIGHT } = require('./constants');
@@ -45,6 +47,7 @@ function createGameState() {
     trial_num: 1,
     stimIndices: [],
     is_bonus_round: false,
+    showThankYouPage: false,
     numSpirits: 1,
     x: Array(100).fill(0),
     y: Array(100).fill(0),
@@ -72,6 +75,7 @@ function createGameState() {
     current_letter: '_',
     agreed_letters: '1',
     current_trial: {},
+    agreed_charity: '',
     triggerNewTrial: false,
   };
 }
@@ -104,7 +108,10 @@ function gameLoop(state) {
     state = makeTrial(state);
     state.trial_num += 1;
   }
-
+  if (state.agreed_letters.substr(state.agreed_letters.length - 1) == 'C') {
+    // console.log(state.agreed_charity)
+    state.dollar.put_down = true;
+  }
 
 
   // decision rule
@@ -167,8 +174,8 @@ function gameLoop(state) {
 
 
   last_agreed = state.agreed_letters.substr(state.agreed_letters.length - 1);
-  if(last_agreed == '.') {
-      return true;
+  if(last_agreed == 'C') {
+      state.showThankYouPage = true;
   }
   // reset all player velocities to 0 so the user must hold down the arrow keys
   state.x = Array(5).fill(0);
@@ -189,6 +196,7 @@ function gameLoop(state) {
     if (state.dollar.picked_up == true) {
       state.dollar.pos.x = state.planchette.pos.x;
       state.dollar.pos.y = state.planchette.pos.y;
+
     }
   }
 

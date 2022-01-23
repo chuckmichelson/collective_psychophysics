@@ -12,9 +12,34 @@ const DOLLAR_WIDTH = 80;
 const DOLLAR_HEIGHT = 38;
 const NUM_ANIMALS = 9;
 const NUM_DESKS = 8;
+const NUM_CHARITIES = 5;
 
 const CTR_POS_X = 256;
 const CTR_POS_Y = 256;
+
+const CHARITIES = {
+  0 : {
+    name: "Austin Pets Alive!",
+    x : 195, y : 85,
+    },
+  1 : {
+    name: "Hospice Austin",
+    x : 455, y : 85,
+    },
+  2 : {
+    name: "Keep Austin Beautiful",
+    x : 145, y : 180,
+    },
+  3 : {
+    name: "Shoal Creek Conservancy",
+    x : 345, y : 180,
+    },
+  4 : {
+    name: "Art From The Streets",
+    x : 510, y : 180,
+    },
+}
+
 
 const ANIMALS = {
   0 : {
@@ -142,5 +167,7 @@ module.exports = {
   NUM_ANIMALS,
   DESKS,
   NUM_DESKS,
+  CHARITIES,
+  NUM_CHARITIES,
   BLUR,
 }
